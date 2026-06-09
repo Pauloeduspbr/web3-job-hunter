@@ -44,6 +44,12 @@ def main(argv=None) -> int:
     t.add_argument("--jd-text", help="Job description text inline")
     t.add_argument("--store", default=None, help="Fact store JSON path (default: data/cv_master.json)")
     t.add_argument("--out-dir", default="output", help="Directory for the tailored CV outputs")
+    t.add_argument(
+        "--theme",
+        default="engineeringresumes",
+        help="RenderCV theme for the PDF (engineeringresumes, classic, harvard, "
+        "engineeringclassic, sb2nov, moderncv, ink, opal, ember)",
+    )
 
     args = parser.parse_args(argv)
 
@@ -61,7 +67,7 @@ def main(argv=None) -> int:
     if args.cmd == "tailor":
         jd = _read_jd(args)
         profile = factstore.load(args.store)
-        result = pipeline.run(jd, profile=profile, out_dir=args.out_dir)
+        result = pipeline.run(jd, profile=profile, out_dir=args.out_dir, theme=args.theme)
 
         m = result["match"]
         crit = result["critique"]
@@ -79,8 +85,20 @@ def main(argv=None) -> int:
         if result["glossary_missing"]:
             print("  WARNING — glossary terms altered in translation: " + ", ".join(result["glossary_missing"]))
         if result["ats_warnings"]:
-            print("  ATS/QA: " + " | ".join(result["ats_warnings"]))
-        print(f"\nOutputs:\n  {result['md_path']}\n  {result['docx_path']}")
+            print("  ATS/QA (markdown): " + " | ".join(result["ats_warnings"]))
+        if result["pdf_error"]:
+            print(f"  WARNING — PDF render failed: {result['pdf_error']} (MD/DOCX still generated)")
+        if result["ats_pdf_missing"]:
+            print("  WARNING — ATS self-check: tokens missing from PDF text layer: "
+                  + ", ".join(result["ats_pdf_missing"]))
+        elif result["pdf_path"]:
+            print("  ATS self-check (PDF text layer): OK")
+        print(f"\nOutputs (theme={result['theme']}):")
+        if result["pdf_path"]:
+            print(f"  PDF   : {result['pdf_path']}")
+        print(f"  DOCX  : {result['docx_path']}")
+        print(f"  MD    : {result['md_path']}")
+        print(f"  TRACE : {result['trace_report_path']}")
         print("\nReview the CV; submission to the job is manual (project policy).")
         return 0
 

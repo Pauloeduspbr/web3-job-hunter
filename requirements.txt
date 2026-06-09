@@ -1,11 +1,13 @@
-# Web3 Job Tailor — núcleo de tailoring (estágios 1-2 + 6-7-8)
-# Instale com: pip install -r requirements.txt
+# Web3 Job Tailor — núcleo de tailoring + render profissional (Fase 0)
+# Requer Python >= 3.12 (constraint do rendercv). Setup recomendado:
+#   py -3.13 -m venv .venv && .venv\Scripts\pip install -r requirements.txt
 
 anthropic            # precisa de versão com client.messages.parse(output_format=...) — rode `pip install -U anthropic`
 pydantic>=2.7        # schema do fact store + structured outputs
-pyyaml>=6.0          # glossário DO-NOT-TRANSLATE
+pyyaml>=6.0          # glossário DO-NOT-TRANSLATE + YAML do RenderCV
 pymupdf4llm>=0.0.17  # estágio 1: PDF -> markdown layout-aware (AGPL v3 — ok uso pessoal/OSS)
 python-docx>=1.1     # estágio 8: export DOCX ATS-safe
+rendercv[full]>=2.8  # Fase 0: PDF profissional via Typst (MIT/Apache-2.0; inclui typst + fonts)
 
 # Opcionais (não exigidos pelo núcleo):
 #   pdfplumber>=0.11        # fallback MIT de extração de PDF (sem trava AGPL)

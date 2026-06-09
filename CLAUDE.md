@@ -73,15 +73,17 @@ Secundario: bounties Superteam Earn como side income.
 - `Interview_QA_Data_Engineer.md` — 45+ perguntas com respostas (tecnico, comportamental, crypto)
 - `README.md` — visao geral do projeto
 
-### Motor "Web3 Job Tailor" (codigo — 2026-06-09)
+### Motor "Web3 Job Tailor" (codigo — 2026-06-09; Fase 0 concluida)
 Pipeline Python que le CV PDF -> fact store -> adapta a vaga (colada manualmente)
--> traduz/localiza -> exporta CV ATS-safe. Anti-alucinacao por fact store imutavel
-+ Self-Refine. Coleta automatica de vagas (Greenhouse/Lever/web3.career) e LinkedIn
-(SO email-alerts + colagem, NUNCA scraping) ficam para a proxima fase.
+-> PDF PROFISSIONAL (RenderCV/Typst, temas) + DOCX + traceability report, PT/EN.
+Anti-alucinacao: fact store imutavel + `source_fact` por bullet + guardrails
+deterministicos + Self-Refine. Coleta automatica de vagas (Greenhouse/Lever/
+web3.career) e LinkedIn (SO email-alerts + colagem, NUNCA scraping) = proxima fase.
+- `docs/saas-plano.md` — roadmap SaaS em 4 fases (Fase 0 = dogfooding, FEITA)
 - `docs/motor-cv-tailor-arquitetura.md` — metodo e logica (8 estagios, fontes, riscos)
-- `docs/motor-cv-tailor-uso.md` — guia de uso do nucleo
-- `src/web3_job_tailor/` — pacote (ingest/structure/factstore/jobparse/match/tailor/translate/export/pipeline/cli)
-- `config/glossary.yaml` — DO-NOT-TRANSLATE + mapa de cargos PT->EN
+- `docs/motor-cv-tailor-uso.md` — guia de uso (requer Python >=3.12; venv 3.13)
+- `src/web3_job_tailor/` — pacote (+render/trace_report/jsonresume na Fase 0)
+- `vendor/typst_packages/` — fontawesome vendorizado (fix Windows do Typst); NAO deletar
 - Modelos: Haiku (extracao) + Sonnet (tailor/judge/traducao); cloud Anthropic; `data/`+`output/` = PII (gitignored)
 
 ### Historias AWS Ativas (trabalho atual)

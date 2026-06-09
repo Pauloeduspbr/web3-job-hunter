@@ -80,6 +80,40 @@ class MatchResult(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Tailored resume (structured output WITH per-bullet traceability)
+# ---------------------------------------------------------------------------
+class SkillLine(BaseModel):
+    label: str = Field(description="group label, e.g. 'Core', 'Cloud', 'Data Engineering'")
+    details: str = Field(description="comma-separated skills, ONLY ones present in the fact store")
+
+
+class TailoredBullet(BaseModel):
+    text: str = Field(description="the rewritten bullet (action verb + task + quantified result)")
+    source_fact: str = Field(
+        description="VERBATIM quote of the fact-store bullet/metric this derives from; never empty"
+    )
+
+
+class TailoredExperience(BaseModel):
+    title: str
+    company: str
+    start: Optional[str] = None
+    end: Optional[str] = None
+    location: Optional[str] = None
+    bullets: list[TailoredBullet] = Field(default_factory=list)
+
+
+class TailoredResume(BaseModel):
+    """What tailoring is allowed to change. Education/certifications/languages are
+    copied verbatim from the fact store at render time (zero hallucination surface)."""
+
+    headline: str = Field(description="mirrors the job title ONLY if truthful for the candidate")
+    summary: str = Field(description="2-3 sentences, mirrors job terminology onto real facts")
+    skills: list[SkillLine] = Field(default_factory=list)
+    experiences: list[TailoredExperience] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
 # Tailoring critic (Self-Refine)
 # ---------------------------------------------------------------------------
 class Critique(BaseModel):
