@@ -22,6 +22,7 @@ Thumbs.db
 # Environment
 .env
 .env.*
+!.env.example
 
 # Subprojects (separate repos)
 github-projects/
@@ -30,3 +31,7 @@ github-projects/
 *.pem
 *.key
 credentials*.json
+
+# Web3 Job Tailor — PII (CV fact store + tailored outputs). NEVER commit.
+data/
+output/

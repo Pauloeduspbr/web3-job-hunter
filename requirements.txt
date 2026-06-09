@@ -1,0 +1,13 @@
+# Web3 Job Tailor — núcleo de tailoring (estágios 1-2 + 6-7-8)
+# Instale com: pip install -r requirements.txt
+
+anthropic            # precisa de versão com client.messages.parse(output_format=...) — rode `pip install -U anthropic`
+pydantic>=2.7        # schema do fact store + structured outputs
+pyyaml>=6.0          # glossário DO-NOT-TRANSLATE
+pymupdf4llm>=0.0.17  # estágio 1: PDF -> markdown layout-aware (AGPL v3 — ok uso pessoal/OSS)
+python-docx>=1.1     # estágio 8: export DOCX ATS-safe
+
+# Opcionais (não exigidos pelo núcleo):
+#   pdfplumber>=0.11        # fallback MIT de extração de PDF (sem trava AGPL)
+#   sentence-transformers   # camada semântica do match (embeddings) — ver docs/motor-cv-tailor-arquitetura.md §6
+#   weasyprint              # export PDF (além do DOCX)

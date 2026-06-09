@@ -1,0 +1,76 @@
+# Glossário de tradução do Web3 Job Tailor.
+# do_not_translate: termos protegidos por placeholder ANTES de enviar ao LLM e
+# restaurados verbatim depois (não dependem só da instrução do prompt — aderência
+# probabilística). Curado manualmente (nenhuma fonte é específica para CV de DE).
+# role_map: tradução canônica de cargos PT -> EN.
+
+do_not_translate:
+  # Nome próprio
+  - Paulo Eduardo dos Santos
+  # Stack / ferramentas (mantêm forma original em qualquer idioma)
+  - Python
+  - PySpark
+  - SQL
+  - Apache Airflow
+  - Airflow
+  - dbt
+  - Apache Spark
+  - Spark
+  - Apache Kafka
+  - Kafka
+  - Apache NiFi
+  - NiFi
+  - Apache Hive
+  - Hive
+  - Delta Lake
+  - Databricks
+  - Snowflake
+  - BigQuery
+  - Redshift
+  - Terraform
+  - Docker
+  - Kubernetes
+  - Ansible
+  - PostgreSQL
+  - MongoDB
+  - Cassandra
+  - DynamoDB
+  - Power BI
+  - Tableau
+  - QlikSense
+  - Looker
+  - Grafana
+  - AWS
+  - Azure
+  - GCP
+  - EMR Serverless
+  - AWS Glue
+  - Athena
+  - Lake Formation
+  - Data Factory
+  - Synapse Analytics
+  - Dataproc
+  - CDC
+  # Empresas (nomes próprios)
+  - Itau
+  - Banco do Brasil
+  - Banco do Nordeste
+  - Natura
+  - Natura & Co
+  - Cielo
+  - Claro
+  - Claro Brasil
+  - Vivo
+  - Enel
+  - Hospital Sirio-Libanes
+  - Stefanini
+  - BRQ
+  - AmericaNet
+  - Dell EMC
+
+role_map:
+  Engenheiro de Dados Senior: Senior Data Engineer
+  Engenheiro de Dados: Data Engineer
+  Arquiteto de Dados: Data Architect
+  Especialista em Big Data: Big Data Specialist
+  Engenheiro de Dados Pleno: Mid-level Data Engineer
