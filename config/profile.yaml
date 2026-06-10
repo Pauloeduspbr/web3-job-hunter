@@ -1,0 +1,159 @@
+# Skill profile — Paulo Eduardo dos Santos
+# Source of truth for job matching. Extracted from Curriculo/Curriculo_Paulo_Eduardo.pdf
+# and Resume_Paulo_Eduardo_Web3_v2.md (2026-06-10).
+
+candidate:
+  name: Paulo Eduardo dos Santos
+  title: Senior Data Engineer
+  years_experience: 9
+  location: Americana - Sao Paulo, Brazil
+  email: paulo_eduardosp@yahoo.com.br
+  linkedin: https://www.linkedin.com/in/paulo--eduardo/
+  github: https://github.com/Pauloeduspbr
+  languages:
+    portuguese: native
+    english: B2 upper-intermediate
+
+target:
+  roles:
+    - Data Engineer
+    - Senior Data Engineer
+    - Analytics Engineer
+    - Big Data Engineer
+  seniority: [senior, mid-senior, staff]
+  remote: required
+  min_salary_usd: 100000
+  preferred_domains: [web3, crypto, blockchain, fintech, payments, defi, exchange]
+  excluded_roles: [solidity developer, rust developer, smart contract developer, frontend]
+
+# weight: 3 = core differentiator, 2 = strong, 1 = working knowledge
+skills:
+  languages:
+    python: {weight: 3, years: 9}
+    sql: {weight: 3, years: 9}
+    pyspark: {weight: 3, years: 8}
+    shell: {weight: 2, years: 9}
+    scala: {weight: 1, years: 2}
+  orchestration_etl:
+    airflow: {weight: 3, years: 7}
+    dbt: {weight: 3, years: 4}
+    kafka: {weight: 2, years: 4}
+    nifi: {weight: 2, years: 4}
+    talend: {weight: 1}
+    informatica: {weight: 1}
+    ssis: {weight: 1}
+    datastage: {weight: 1}
+  processing:
+    spark: {weight: 3, years: 8}
+    databricks: {weight: 2, years: 4}
+    hive: {weight: 2, years: 8}
+    emr: {weight: 3, years: 5}
+    hadoop: {weight: 2, years: 9}
+    trino: {weight: 1}
+  aws:
+    s3: {weight: 3}
+    glue: {weight: 3}
+    athena: {weight: 3}
+    redshift: {weight: 3}
+    lambda: {weight: 2}
+    kinesis: {weight: 2}
+    emr_serverless: {weight: 3}
+    lake_formation: {weight: 2}
+    dms: {weight: 1}
+    step_functions: {weight: 1}
+    kms: {weight: 1}
+  azure:
+    databricks: {weight: 2}
+    data_factory: {weight: 2}
+    synapse: {weight: 2}
+    fabric: {weight: 1}
+  gcp:
+    bigquery: {weight: 2}
+    dataproc: {weight: 2}
+  warehouses_databases:
+    snowflake: {weight: 3, years: 4}
+    postgresql: {weight: 2}
+    oracle: {weight: 2}
+    sql_server: {weight: 2}
+    mysql: {weight: 1}
+    teradata: {weight: 1}
+    mongodb: {weight: 1}
+    cassandra: {weight: 2}
+    dynamodb: {weight: 1}
+    hbase: {weight: 1}
+  lakehouse_formats:
+    delta_lake: {weight: 3}
+    iceberg: {weight: 3}
+    hudi: {weight: 1}
+    parquet: {weight: 3}
+  architectures:
+    medallion: {weight: 3}
+    data_lake: {weight: 3}
+    data_warehouse: {weight: 3}
+    dimensional_modeling: {weight: 3}
+    data_mesh: {weight: 1}
+    data_vault: {weight: 1}
+    cdc: {weight: 2}
+    event_driven: {weight: 2}
+  devops:
+    docker: {weight: 2}
+    kubernetes: {weight: 2}
+    terraform: {weight: 2}
+    ansible: {weight: 1}
+    ci_cd: {weight: 2}
+    git: {weight: 2}
+  governance_quality:
+    data_quality: {weight: 3}
+    data_governance: {weight: 2}
+    unity_catalog: {weight: 2}   # Databricks governance/catalog (used on Azure Databricks; "Unit Catalog" no PDF e typo)
+    lgpd_pii: {weight: 2}
+    vault_kms_encryption: {weight: 1}
+  visualization:
+    power_bi: {weight: 2}
+    tableau: {weight: 1}
+    qliksense: {weight: 1}
+    grafana: {weight: 1}
+    looker: {weight: 1}
+
+domains:
+  - banking (Itau, Banco do Brasil, Banco do Nordeste, Bradesco)
+  - payments (Cielo)
+  - healthcare (Hospital Sirio-Libanes, RD Saude - PII/LGPD)
+  - e-commerce (Natura)
+  - telecom (Claro, Vivo, Nextel)
+  - energy (Enel)
+
+achievements:
+  - "99.9% uptime SLA for Banco do Brasil Big Data environment (millions of daily transactions)"
+  - "40% maintenance time reduction via reusable Python automation framework"
+  - "60% storage reduction migrating legacy SQL to Parquet/Delta Lake"
+  - "50% processing time reduction via cluster optimization at Claro"
+  - "70% less manual intervention via Azure Automation pipelines"
+  - "Multi-cloud migration Oracle -> AWS+Azure+GCP for Cielo payment data"
+  - "Healthcare Data Lake on Apache Iceberg with PII/LGPD governance (Vault, KMS, Fernet)"
+
+portfolio:
+  - name: crypto-data-pipeline
+    url: https://github.com/Pauloeduspbr/crypto-data-pipeline
+    stack: [python, airflow, postgresql, docker, coingecko api]
+    proof: "Full pipeline with real data, 100 coins, 1.74s execution, 7/7 quality checks"
+  - name: medallion-data-lake
+    url: https://github.com/Pauloeduspbr/medallion-data-lake
+    stack: [python, airflow, dbt, terraform, aws, gcp, minio]
+    proof: "Production-ready Bronze/Silver/Gold template with SCD Type 2, 36 tests"
+  - name: dune-analytics-queries
+    url: https://github.com/Pauloeduspbr/dune-analytics-queries
+    stack: [sql, dune analytics]
+    proof: "12 blockchain analytics queries (DeFi, NFT, Solana, Ethereum, cross-chain)"
+
+certifications:
+  - Red Hat Certified System Administrator (RHCSA)
+  - Big Data Engineering — Garre Training (160h)
+
+# Ambas as formacoes em andamento sao REAIS (confirmado pelo Paulo em 2026-06-10)
+education:
+  - "Associate Degree in Big Data and Data Intelligence — Anhembi Morumbi (expected 2026)"
+  - "Artificial Intelligence (in progress) — FMU"
+  - "BSc Information Systems — UNIP (2006)"
+
+# Titulo Natura: "Senior Data Engineer" em CV ingles; "Engenheiro de Dados Senior" em CV portugues

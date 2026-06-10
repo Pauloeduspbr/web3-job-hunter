@@ -51,7 +51,7 @@ Specialized in multi-cloud data platform migrations, Medallion/Delta Lake archit
 ## PROFESSIONAL EXPERIENCE
 
 ### Data Engineer | BRQ (Client: Itau)
-**July 2025 - December 2025 | Remote, Brazil**
+**July 2025 - June 2026 | Remote, Brazil**
 
 Developed ETL pipelines using EMR Serverless and AWS Glue Studio for one of Latin America's largest banks. Optimized SQL queries for significant performance gains and implemented data quality frameworks with A/B testing analysis for business hypothesis validation.
 
@@ -121,7 +121,7 @@ Designed complete Data Lake architecture (Raw/Stage/Analytics zones) for banking
 ---
 
 ### Big Data Architect/Engineer | Hospital Sirio-Libanes
-**Sept 2019 - Dec 2020 | Sao Paulo, Brazil**
+**Mar 2019 - Dec 2020 | Sao Paulo, Brazil**
 
 Built automated pipelines (Oracle extraction, S3 transfer, format conversion) with Airflow. Containerized with Docker/Kubernetes, implemented SSO with AWS Cognito + Azure AD.
 
@@ -142,6 +142,8 @@ Built automated pipelines (Oracle extraction, S3 transfer, format conversion) wi
 ## EDUCATION
 
 **Associate Degree in Big Data and Data Intelligence** — Anhembi Morumbi University | Expected 2026
+
+**Artificial Intelligence (in progress)** — FMU
 
 **Bachelor of Science in Information Systems** — UNIP | 2006
 

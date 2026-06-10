@@ -1,0 +1,18 @@
+# Crypto/FinTech companies with PUBLIC ATS APIs (no auth, $0).
+# Verified live on 2026-06-10: greenhouse + ashby slugs return HTTP 200.
+# Add companies here as you discover them — the collector picks them up automatically.
+
+greenhouse:   # GET https://boards-api.greenhouse.io/v1/boards/<slug>/jobs?content=true
+  - consensys     # had "Senior Data Engineer" REMOTE (US/Canada/LATAM/EMEA) on 2026-06-10
+  - ripple
+  - fireblocks
+
+ashby:        # GET https://api.ashbyhq.com/posting-api/job-board/<slug>
+  - kraken.com
+  - chainalysis-careers   # had "Senior Data Platform Engineer" isRemote=true on 2026-06-10
+
+lever:        # GET https://api.lever.co/v0/postings/<slug>?mode=json
+  - ledger
+
+# title must match this regex (case-insensitive) to be kept
+title_filter: "data\\s*(platform\\s*)?engineer|analytics\\s*engineer|big\\s*data"

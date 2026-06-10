@@ -1,0 +1,100 @@
+[
+  {
+    "id": 4425268583,
+    "title": "Big Data Senior - Remote Work",
+    "company": "BairesDev",
+    "companyName": "BairesDev",
+    "location": "Remote | Brazil",
+    "salary": null,
+    "description": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley.\nOur diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide.\nWhen you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success.\nBig Data Senior at BairesDev\nWe are looking for Big Data Seniors to join our Development team and participate in different projects made up of multicultural teams distributed throughout the world. We are looking for proactive people, and team players passionate about programming in this language and oriented to provide the best experience to the end user. This is an excellent opportunity for those professionals looking to develop in one of the fastest-growing companies in the industry!\nThese developers will face numerous technical challenges, so they must use current technologies, and get involved in the mobile world, web applications, devices, etc.\nWhat You Will Do:\n- Identify and recommend the most appropriate paradigms and technology choices for batch and real-time ML scenarios.- Write highly efficient Spark jobs to process TB of data.- Collect heuristics and optimize Spark jobs on large Hadoop clusters.- Perform DevOps on AWS to ensure resiliency, availability, security, and HA/DR.- Partner with an x-functional team of Architects, Data Scientists, Data Engineers, Analysts, PMs, and customers.- Write clean, efficient code and deployment artifacts in Java or Python, or Chef.- Teach and mentor other engineers on the team.\nHere’s what we are looking for:\n- 6+ years of experience working as a developer.- 5+ years of experience in Big Data.- Proficient with analysis, troubleshooting, and problem-solving.- Hands-on experience with managing data loads and data quality is a plus.- Advanced English level.\nHow we do make your work (and your life) easier:\n- 100% remote work (from anywhere).- Excellent compensation in USD or your local currency if preferred- Hardware and software setup for you to work from home.- Flexible hours: create your own schedule.- Paid parental leaves, vacations, and national holidays.- Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent.- Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities.\nApply now and become part of a global team where your unique talents can truly thrive!",
+    "url": "https://www.linkedin.com/jobs/view/4425268583/?trk=jobs_biz_prem_srch",
+    "postedAt": "2026-06-08T17:27:16",
+    "applicants": 0,
+    "scrapedAt": "2026-06-10T16:54:10.447825+00:00",
+    "source": "linkedin/apify",
+    "_raw": {
+      "job_info": {
+        "title": "Big Data Senior - Remote Work",
+        "description": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley.\nOur diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide.\nWhen you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success.\nBig Data Senior at BairesDev\nWe are looking for Big Data Seniors to join our Development team and participate in different projects made up of multicultural teams distributed throughout the world. We are looking for proactive people, and team players passionate about programming in this language and oriented to provide the best experience to the end user. This is an excellent opportunity for those professionals looking to develop in one of the fastest-growing companies in the industry!\nThese developers will face numerous technical challenges, so they must use current technologies, and get involved in the mobile world, web applications, devices, etc.\nWhat You Will Do:\n- Identify and recommend the most appropriate paradigms and technology choices for batch and real-time ML scenarios.- Write highly efficient Spark jobs to process TB of data.- Collect heuristics and optimize Spark jobs on large Hadoop clusters.- Perform DevOps on AWS to ensure resiliency, availability, security, and HA/DR.- Partner with an x-functional team of Architects, Data Scientists, Data Engineers, Analysts, PMs, and customers.- Write clean, efficient code and deployment artifacts in Java or Python, or Chef.- Teach and mentor other engineers on the team.\nHere’s what we are looking for:\n- 6+ years of experience working as a developer.- 5+ years of experience in Big Data.- Proficient with analysis, troubleshooting, and problem-solving.- Hands-on experience with managing data loads and data quality is a plus.- Advanced English level.\nHow we do make your work (and your life) easier:\n- 100% remote work (from anywhere).- Excellent compensation in USD or your local currency if preferred- Hardware and software setup for you to work from home.- Flexible hours: create your own schedule.- Paid parental leaves, vacations, and national holidays.- Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent.- Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities.\nApply now and become part of a global team where your unique talents can truly thrive!",
+        "location": "Brazil",
+        "location_id": "106057199",
+        "employment_status": "Full-time",
+        "is_remote_allowed": true,
+        "is_third_party_sourced": false,
+        "listed_at": "2026-06-08T17:27:16",
+        "expire_at": "2026-07-08T17:27:16",
+        "job_url": "https://www.linkedin.com/jobs/view/4425268583/?trk=jobs_biz_prem_srch",
+        "experience_level": "Mid-Senior level",
+        "industries": [
+          "IT Services and IT Consulting"
+        ],
+        "job_functions": [
+          "Information Technology"
+        ],
+        "is_new": false,
+        "original_listed_at": "2026-06-08T17:27:16",
+        "job_state": "LISTED",
+        "workplace_types": [
+          "REMOTE"
+        ],
+        "country_code": "br",
+        "job_posting_id": 4425268583,
+        "is_reposted": false,
+        "job_application_limit_reached": false,
+        "eligible_for_referrals": false
+      },
+      "company_info": {
+        "name": "BairesDev",
+        "description": "BairesDev is your expert partner that works alongside clients to build high-quality software solutions with speed and precision.\n\nIt's our mission to generate lasting value by tackling our clients’ business challenges. Drawing on the top 1% of tech talent from the Americas and the Caribbean, our team executes scalable, high-performing technology solutions.\nWith 4,000+ seasoned engineers in 50 countries, we deliver time zone-aligned expertise. We’ve been shaping the tech landscape for over a decade through our work with disruptive startups, industry-changing companies, and the Fortune Global 500 brands like Google, Johnson & Johnson, and more.\n\nBairesDev is here to unlock the possibilities for your business,  ready to take companies of any size from potential to lasting value results.",
+        "staff_count": 3164,
+        "industries": [
+          "IT Services and IT Consulting"
+        ],
+        "specialities": [
+          "Nearshore Software Development",
+          "Managed Teams",
+          "Digital Transformation",
+          "Digital Acceleration",
+          "Nearshore Technology Solutions",
+          "AI and Machine Learning",
+          "Cybersecurity",
+          "Mobile & Web Development",
+          "Staff Augmentation",
+          "IoT",
+          "Digital Wallets & Cryptocurrency",
+          "Data Science",
+          "UI/UX Design",
+          "Blockchain Consulting",
+          "ERP & CRM",
+          "eCommerce",
+          "MVP Development",
+          "Process Automation",
+          "Cloud Computing",
+          "Progressive Web Applications",
+          "Software Testing & QA",
+          "Agile Development",
+          "Applications & Architecture Update"
+        ],
+        "universal_name": "bairesdev",
+        "headquarters": {
+          "geographicArea": "California",
+          "country": "US",
+          "city": "San Francisco",
+          "postalCode": "94111",
+          "line1": "2 Embarcadero Center",
+          "$type": "com.linkedin.common.Address"
+        },
+        "url": "https://www.linkedin.com/company/bairesdev",
+        "logo_url": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=1782950400&v=beta&t=VYUWh4mkHC4Lc71DmIJb11smv76nrgSo0yBURoDbaek",
+        "background_cover_url": "https://media.licdn.com/dms/image/v2/D4E3DAQG7Cg065HyaIw/image-scale_191_1128/image-scale_191_1128/0/1687447606260/bairesdev_cover?e=1781715600&v=beta&t=japCOWcYy8nBgQOIQ93p98CfUlTdIq0xRM_8YGrQjho"
+      },
+      "apply_details": {
+        "total_applies": 0,
+        "total_views": 0,
+        "is_application_limit_reached": false,
+        "application_url": "https://applicants.bairesdev.com/job/99/114448/apply?utm_source=linkedinjobposting&utm_medium=jobposting&utm_campaign=USA-20260608",
+        "is_easy_apply": false
+      }
+    }
+  }
+]

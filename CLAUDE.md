@@ -56,6 +56,16 @@ Secundario: bounties Superteam Earn como side income.
 5. contrato_handheld - [Retirada, Uso e Dev.]
 6. ncf_solicitacao_bloqueio - [Retirada, Uso e Dev.]
 
+## Pipeline de Automacao (LIVE — ver README_PIPELINE.md)
+
+- **App web**: `python -m uvicorn backend.app:app --port 8000` -> http://localhost:8000 (FastAPI + React; upload de CV, links, pipeline, download .md/.docx). Geracao de CV hibrida: ANTHROPIC_API_KEY presente -> Claude API (claude-opus-4-8); ausente -> brief + Claude Code
+- **Funil de busca em 2 etapas**: busca LinkedIn (actor proprio) traz SO a listagem (titulo/empresa/cidade, sem descricao nem modalidade) -> toda coleta pontua automatico -> botao "Detalhar" enriquece vagas promissoras via apimaestro/linkedin-job-detail ($0.005/vaga) trazendo descricao + remote/hybrid/onsite -> re-score. Filtros na tabela: modalidade, score minimo, texto. Dedupe: registro com detalhe SEMPRE vence listagem (score_jobs.py)
+- `python main.py scrape|search|boards|score|brief` — vagas (Apify + boards gratis) -> score vs config/profile.yaml -> brief de tailoring -> CV gerado pelo Claude Code
+- Actors validados: `apimaestro/linkedin-job-detail` ($0.005/vaga, scrape por URL) e `viralanalyzer/linkedin-jobs-multi-country` (actor PROPRIO da conta, busca por keyword, so compute units)
+- Boards gratis ($0): Greenhouse/Ashby/Lever APIs (slugs em config/companies_watchlist.yaml), RemoteOK, RSS cryptocurrencyjobs
+- CVs tailorizados em output/resumes/; NUNCA inventar skill/numero fora de config/profile.yaml
+- Ingles do Paulo: B2 upper-intermediate — NUNCA inflar para "advanced/fluent" em CV
+
 ## Regras para o Claude
 
 1. **Priorize eficiencia**: menos conversa, mais resultado

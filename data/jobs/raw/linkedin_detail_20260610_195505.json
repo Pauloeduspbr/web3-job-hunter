@@ -1,0 +1,144 @@
+[
+  {
+    "workplace": "remote",
+    "id": 4417535862,
+    "title": "Data Analyst (SQL / Python) | $15/hr Remote",
+    "company": "Crossing Hurdles",
+    "companyName": "Crossing Hurdles",
+    "location": "Remote | Brazil",
+    "salary": null,
+    "description": "Position: SwarmBench Task Engineer Data AnalysisType: Short-Term Contract (4 weeks)Compensation: $15 per hourLocation: RemoteCommitment: 30-40 hours per week with 4 hours overlap with PST\nRole ResponsibilitiesDesign and author multi-agent benchmark tasks centered on complex data analysis workflowsCreate realistic synthetic datasets or curate real-world style datasets across domains such as finance, operations, security, or market analysisBuild tasks that require agents to perform cross-referencing, anomaly detection, contradiction identification, and statistical computation across multiple sourcesDevelop decomposition guides that split analytical work across specialist sub-agents such as financial, technical, security, or operations analystsWrite precise oracle logic or verification scripts that validate specific analytical conclusions rather than generic summariesCreate reproducible evaluation environments using Python and DockerReview task performance signals to ensure strong separation between weaker and stronger agentic systemsRefine tasks to improve determinism, clarity, difficulty, and scoring quality\nRequirementsStrong years of experience in data analysisStrong proficiency in SQL and Python for data analysis and scripting (pandas, NumPy, or similar)Experience working with real-world, messy datasets such as CSV, JSON, logs, and reportsAbility to design non-trivial analytical questions with clear, specific, and verifiable answersSolid understanding of statistical concepts including averages, distributions, outliers, and correlationsFamiliarity with AI coding benchmark environments (e.g., SWE-bench, Terminal-Bench)Comfortable with Docker including writing Dockerfiles, building images, and debugging container issuesAbility to work independently in a remote environment\nApplication ProcessApply/Easy Apply and check email for application formFill Google formAssessment Link (After shortlisting to be completed within 24 hours)",
+    "url": "https://www.linkedin.com/jobs/view/4417535862/?trk=jobs_biz_prem_srch",
+    "postedAt": "2026-06-05T11:48:07",
+    "applicants": 0,
+    "scrapedAt": "2026-06-10T19:55:05.692766+00:00",
+    "source": "linkedin/apify",
+    "_raw": {
+      "job_info": {
+        "title": "Data Analyst (SQL / Python) | $15/hr Remote",
+        "description": "Position: SwarmBench Task Engineer Data AnalysisType: Short-Term Contract (4 weeks)Compensation: $15 per hourLocation: RemoteCommitment: 30-40 hours per week with 4 hours overlap with PST\nRole ResponsibilitiesDesign and author multi-agent benchmark tasks centered on complex data analysis workflowsCreate realistic synthetic datasets or curate real-world style datasets across domains such as finance, operations, security, or market analysisBuild tasks that require agents to perform cross-referencing, anomaly detection, contradiction identification, and statistical computation across multiple sourcesDevelop decomposition guides that split analytical work across specialist sub-agents such as financial, technical, security, or operations analystsWrite precise oracle logic or verification scripts that validate specific analytical conclusions rather than generic summariesCreate reproducible evaluation environments using Python and DockerReview task performance signals to ensure strong separation between weaker and stronger agentic systemsRefine tasks to improve determinism, clarity, difficulty, and scoring quality\nRequirementsStrong years of experience in data analysisStrong proficiency in SQL and Python for data analysis and scripting (pandas, NumPy, or similar)Experience working with real-world, messy datasets such as CSV, JSON, logs, and reportsAbility to design non-trivial analytical questions with clear, specific, and verifiable answersSolid understanding of statistical concepts including averages, distributions, outliers, and correlationsFamiliarity with AI coding benchmark environments (e.g., SWE-bench, Terminal-Bench)Comfortable with Docker including writing Dockerfiles, building images, and debugging container issuesAbility to work independently in a remote environment\nApplication ProcessApply/Easy Apply and check email for application formFill Google formAssessment Link (After shortlisting to be completed within 24 hours)",
+        "location": "Brazil",
+        "location_id": "106057199",
+        "employment_status": "Contract",
+        "is_remote_allowed": true,
+        "is_third_party_sourced": false,
+        "listed_at": "2026-06-05T11:48:07",
+        "expire_at": "2026-07-05T11:48:07",
+        "job_url": "https://www.linkedin.com/jobs/view/4417535862/?trk=jobs_biz_prem_srch",
+        "experience_level": "Associate",
+        "industries": [
+          "E-Learning Providers",
+          "Strategic Management Services",
+          "Research Services"
+        ],
+        "job_functions": [
+          "Information Technology"
+        ],
+        "is_new": false,
+        "applicant_tracking_system": "Ceipal",
+        "original_listed_at": "2026-04-28T11:30:12",
+        "job_state": "LISTED",
+        "workplace_types": [
+          "REMOTE"
+        ],
+        "country_code": "br",
+        "job_posting_id": 4417535862,
+        "is_reposted": false,
+        "job_application_limit_reached": false,
+        "eligible_for_referrals": false
+      },
+      "company_info": {
+        "name": "Crossing Hurdles",
+        "description": "Crossing Hurdles connects skilled professionals with opportunities across leading AI training platforms and high-growth companies.\n\nAs global demand for human input in AI development continues to grow, many platforms rely on large networks of capable contributors across technical, analytical, and knowledge-based domains. Crossing Hurdles helps professionals discover and access these opportunities by bringing together information, talent networks, and application pathways related to AI model training, evaluation, and emerging AI-enabled work.\n\nThrough our growing community of candidates and professionals, we help individuals explore opportunities with global AI platforms that are building and improving next-generation AI systems. These opportunities often span areas such as technical analysis, research, reasoning tasks, and other knowledge-driven work that supports the development of modern AI models.\n\nAlongside the AI ecosystem, Crossing Hurdles also works with high-growth companies to support talent discovery across key business functions. We collaborate with founders, leadership teams, and hiring managers to help them connect with capable professionals for full-time roles across both on-site and remote teams.\n\nOver the past few quarters, we have partnered with companies including Angel One, Ixigo, Cars24, Veera, ABP Network, Battery Smart, Zavya, and Twin Engineers, supporting hiring initiatives across multiple sectors.\n\nKey areas of focus\n• Opportunities across AI training and evaluation platforms\n• Technology & Product roles\n• Growth, Marketing & Sales\n• Customer Success & Support\n• Finance & Business Operations\n\nBy bringing together talent networks, industry insights, and emerging opportunities across AI and high-growth companies, Crossing Hurdles aims to help capable professionals discover meaningful work while supporting organizations in reaching the talent they need to grow.",
+        "staff_count": 175,
+        "industries": [
+          "Staffing and Recruiting"
+        ],
+        "universal_name": "crossinghurdles",
+        "url": "https://www.linkedin.com/company/crossinghurdles",
+        "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQEGLWHBZmzzcA/company-logo_200_200/B56ZYzlx2LHEAQ-/0/1744622264274/crossinghurdles_logo?e=1782950400&v=beta&t=SuRaGcVX7Y3i8OXAy8GfbTmT8WrPAu9CVMaoaL0YsW4",
+        "background_cover_url": "https://media.licdn.com/dms/image/v2/D563DAQE1jrvlxlcYAw/image-scale_191_1128/B56Zz7kNQ2KYAc-/0/1773747099408/crossinghurdles_cover?e=1781726400&v=beta&t=_yb4zyrFZ6EVheWMFVfJQxDi03INaVx1uyMjzk-OYJI"
+      },
+      "salary_info": {
+        "min_salary": "15.0",
+        "max_salary": "15.0",
+        "currency_code": "USD",
+        "pay_period": "HOURLY",
+        "compensation_type": "BASE_SALARY",
+        "source": "JOB_POSTER_PROVIDED",
+        "provided_by_employer": true
+      },
+      "apply_details": {
+        "total_applies": 0,
+        "total_views": 0,
+        "is_application_limit_reached": false,
+        "application_url": "https://candidateportal.ceipal.com/job-details/64S0rsW9Sk_-ZXCTGAuA83FKgKVaQYpqGydwZQjhgC4#.job_boards.LinkedIn"
+      }
+    }
+  },
+  {
+    "workplace": "hybrid",
+    "id": 4421992064,
+    "title": "Engenheiro(a) de Dados Databricks",
+    "company": "Onetopia",
+    "companyName": "Onetopia",
+    "location": "Curitiba, Paraná, Brazil",
+    "salary": null,
+    "description": "obre o Time de Dados:Na Onetopia, os dados são o nosso dia a dia. Nosso time de Dados tem como missão impulsionar a eficiência, a transparência e a inteligência nos projetos de nossos clientes. Atuamos como parceiros estratégicos, entregando soluções de dados sustentáveis, escaláveis e de alto impacto para diferentes segmentos de negócio.\nPor que essa vaga existe?Estamos em busca de uma pessoa Engenheira de Dados que nos ajude a garantir uma base de dados robusta, confiável e escalável. Você atuará com tecnologias como Azure, Databricks, PySpark e Azure Data Factory, sendo peça-chave na construção de soluções que sustentam o crescimento e a inovação em um dos nossos clientes.\nResponsabilidades e AtribuiçõesComo será o seu dia a dia:Projetar e manter pipelines de dados eficientes, seguros e escaláveis, integrando diferentes fontes (estruturadas e não estruturadas);Criar camadas analíticas que viabilizem o uso self-service de dados pelas áreas de negócio;Traduzir necessidades do negócio em soluções de dados claras, consistentes e acessíveis;Desenvolver e manter processos de ingestão, transformação (ETL/ELT) e disponibilização de dados;Otimizar a performance de pipelines e monitorar suas execuções de forma proativa;Apoiar na definição de arquitetura e promover boas práticas de engenharia e governança de dados;Contribuir na modelagem de dados e no desenho de bancos com foco em performance e escalabilidade;Atuar como ponte entre dados e as demais áreas da companhia, facilitando a comunicação e a tomada de decisão baseada em dados.\nRequisitos e QualificaçõesO que buscamos em você:Graduação em Tecnologia da Informação, Engenharia, Ciência da Computação ou áreas correlatas;Vivência com Azure Cloud.Boa experiência como Engenheiro(a) de Dados, com domínio na construção e manutenção de pipelines;Proficiência em SQL, Python e PySpark;Vivência com ferramentas como Azure Data Factory, Databricks e Power BI;Conhecimento em modelagem de dados e otimização de queries;Familiaridade com boas práticas de versionamento, testes e deploy de pipelines de dados.Boa comunicação, proatividade e trabalho colaborativo em ambientes dinâmicos.\nCritérios que aumentam o match com a vaga:Participação em projetos de construção de Data Lakes e definição de arquitetura de dados;Certificações em Azure ou Databricks.Conhecimento em Delta Lake.Experiência em projetos com arquitetura de dados moderna (Data Lakehouse, medallion architecture etc).\n\n",
+    "url": "https://www.linkedin.com/jobs/view/4421992064/?trk=jobs_biz_prem_srch",
+    "postedAt": "2026-06-08T20:34:02",
+    "applicants": 0,
+    "scrapedAt": "2026-06-10T19:55:05.692766+00:00",
+    "source": "linkedin/apify",
+    "_raw": {
+      "job_info": {
+        "title": "Engenheiro(a) de Dados Databricks",
+        "description": "obre o Time de Dados:Na Onetopia, os dados são o nosso dia a dia. Nosso time de Dados tem como missão impulsionar a eficiência, a transparência e a inteligência nos projetos de nossos clientes. Atuamos como parceiros estratégicos, entregando soluções de dados sustentáveis, escaláveis e de alto impacto para diferentes segmentos de negócio.\nPor que essa vaga existe?Estamos em busca de uma pessoa Engenheira de Dados que nos ajude a garantir uma base de dados robusta, confiável e escalável. Você atuará com tecnologias como Azure, Databricks, PySpark e Azure Data Factory, sendo peça-chave na construção de soluções que sustentam o crescimento e a inovação em um dos nossos clientes.\nResponsabilidades e AtribuiçõesComo será o seu dia a dia:Projetar e manter pipelines de dados eficientes, seguros e escaláveis, integrando diferentes fontes (estruturadas e não estruturadas);Criar camadas analíticas que viabilizem o uso self-service de dados pelas áreas de negócio;Traduzir necessidades do negócio em soluções de dados claras, consistentes e acessíveis;Desenvolver e manter processos de ingestão, transformação (ETL/ELT) e disponibilização de dados;Otimizar a performance de pipelines e monitorar suas execuções de forma proativa;Apoiar na definição de arquitetura e promover boas práticas de engenharia e governança de dados;Contribuir na modelagem de dados e no desenho de bancos com foco em performance e escalabilidade;Atuar como ponte entre dados e as demais áreas da companhia, facilitando a comunicação e a tomada de decisão baseada em dados.\nRequisitos e QualificaçõesO que buscamos em você:Graduação em Tecnologia da Informação, Engenharia, Ciência da Computação ou áreas correlatas;Vivência com Azure Cloud.Boa experiência como Engenheiro(a) de Dados, com domínio na construção e manutenção de pipelines;Proficiência em SQL, Python e PySpark;Vivência com ferramentas como Azure Data Factory, Databricks e Power BI;Conhecimento em modelagem de dados e otimização de queries;Familiaridade com boas práticas de versionamento, testes e deploy de pipelines de dados.Boa comunicação, proatividade e trabalho colaborativo em ambientes dinâmicos.\nCritérios que aumentam o match com a vaga:Participação em projetos de construção de Data Lakes e definição de arquitetura de dados;Certificações em Azure ou Databricks.Conhecimento em Delta Lake.Experiência em projetos com arquitetura de dados moderna (Data Lakehouse, medallion architecture etc).\n\n",
+        "location": "Curitiba, Paraná, Brazil",
+        "location_id": "103501557",
+        "employment_status": "Full-time",
+        "is_remote_allowed": false,
+        "is_third_party_sourced": false,
+        "listed_at": "2026-06-08T20:34:02",
+        "expire_at": "2026-12-05T19:34:02",
+        "job_url": "https://www.linkedin.com/jobs/view/4421992064/?trk=jobs_biz_prem_srch",
+        "experience_level": "",
+        "is_new": false,
+        "applicant_tracking_system": "LinkedIn",
+        "original_listed_at": "2026-06-08T20:34:02",
+        "job_state": "LISTED",
+        "workplace_types": [
+          "HYBRID"
+        ],
+        "country_code": "br",
+        "job_posting_id": 4421992064,
+        "is_reposted": false,
+        "job_application_limit_reached": false,
+        "eligible_for_referrals": false
+      },
+      "company_info": {
+        "name": "Onetopia",
+        "description": "DNA Onetopia\nNosso nome nasce da união entre dois conceitos poderosos: performance absoluta e organização impecável. Ele carrega a essência de acelerar resultados com precisão, sem abrir mão da sofisticação e da clareza na execução.\n\nAssim é a Onetopia: uma empresa feita para transformar tecnologia em inteligência aplicada, conduzindo cada projeto com propósito, eficiência e elegância.\n\nA Onetopia atua com base em princípios éticos sólidos, priorizando transparência, responsabilidade e conformidade em todas as suas relações.\nSeguimos rigorosamente as normas legais e boas práticas de mercado, garantindo integridade em cada projeto e decisão.\n\nNosso compromisso é construir relações de confiança e respeito, protegendo informações, pessoas e negócios com conduta íntegra e profissionalismo constante.",
+        "staff_count": 8,
+        "industries": [
+          "Outsourcing and Offshoring Consulting"
+        ],
+        "universal_name": "onetopia-br",
+        "headquarters": {
+          "geographicArea": "Paraná",
+          "country": "BR",
+          "city": "Curitiba",
+          "$type": "com.linkedin.common.Address"
+        },
+        "url": "https://www.linkedin.com/company/onetopia-br",
+        "logo_url": "https://media.licdn.com/dms/image/v2/D4E0BAQEbJbQF2NbzNQ/company-logo_200_200/B4EZrAFhmWHEAI-/0/1764159267071/onetopia_br_logo?e=1782950400&v=beta&t=MrwSVrMPJ7b9l6yhVkeKPwMfNPau06Tkie_IUdtcqjQ",
+        "background_cover_url": "https://media.licdn.com/dms/image/v2/D4E3DAQESMeOAmh45kA/image-scale_191_1128/B4EZnJWG2EIQAk-/0/1760019640319/onetopia_br_cover?e=1781726400&v=beta&t=Oh0RZAOGsOaiuS3kAiXBo3DwWTV9-NJGDaZtsKa3Wow"
+      },
+      "apply_details": {
+        "total_applies": 0,
+        "total_views": 0,
+        "is_application_limit_reached": false
+      }
+    }
+  }
+]
