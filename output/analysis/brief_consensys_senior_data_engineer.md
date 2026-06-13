@@ -1,9 +1,10 @@
 # Tailoring Brief — Senior Data Engineer @ Consensys
 
-- Generated: 2026-06-10T16:54:31.577900+00:00
+- Generated: 2026-06-13T18:21:42.784153+00:00
 - Job URL: https://consensys.io/open-roles/7335693?gh_jid=7335693
-- Match score: 96.9 (skills: 96.1)
+- Match score: 100.0 (skills: 100.0)
 - Location/Salary: UNITED STATES - Remote, CANADA - Remote, LATAM - Remote, EMEA - Remote | None
+- Target language: English (en-US)
 
 ## ATS keywords to mirror verbatim in the resume
 
@@ -37,6 +38,7 @@
 - emr
 - s3
 - redshift
+- aws
 - bigquery
 - snowflake
 - data warehouse
@@ -50,17 +52,17 @@
 
 ## Gap skills (do NOT fabricate; mitigate via adjacent experience or portfolio)
 
-- aws
+- (none)
 
 ## Most relevant candidate evidence
 
 ### Achievements (quantified)
 - 40% maintenance time reduction via reusable Python automation framework
 - 60% storage reduction migrating legacy SQL to Parquet/Delta Lake
+- Multi-cloud migration Oracle -> AWS+Azure+GCP for Cielo payment data
 - 99.9% uptime SLA for Banco do Brasil Big Data environment (millions of daily transactions)
 - 50% processing time reduction via cluster optimization at Claro
 - 70% less manual intervention via Azure Automation pipelines
-- Multi-cloud migration Oracle -> AWS+Azure+GCP for Cielo payment data
 
 ### Portfolio projects
 - **medallion-data-lake** (https://github.com/Pauloeduspbr/medallion-data-lake): Production-ready Bronze/Silver/Gold template with SCD Type 2, 36 tests
@@ -69,15 +71,13 @@
 
 ## Generation instructions (for the LLM step)
 
-1. Base resume: `Resume_Paulo_Eduardo_Web3_v2.md` — keep structure, contacts and truthfulness.
-2. Rewrite PROFESSIONAL SUMMARY mirroring the job title and top 5 demanded skills.
-3. Reorder TECHNICAL SKILLS so matched/demanded skills appear first, using the
-   job's exact terminology (ATS keyword mirroring).
-4. In each experience entry, surface bullets that prove the demanded skills;
-   keep quantified results. Never invent experience for gap skills.
-5. For gap skills, reference the closest adjacent experience or portfolio project.
-6. Output: single-column Markdown, standard section headers, max 2 pages,
-   en-US, ATS-safe (no tables/images/columns).
+1. Base resume: `Resume_Paulo_Eduardo_Web3_v2.md` — stay FAITHFUL to it. Keep EVERY company and its key projects; never drop a role or collapse it to one line.
+2. Tailoring = reorder + emphasize + improve wording only. Lead the PROFESSIONAL SUMMARY with the job title and top demanded skills; reorder TECHNICAL SKILLS so matched/demanded skills appear first using the job's exact terms (ATS keyword mirroring).
+3. Within each experience entry, surface the bullets/projects that prove the demanded skills first; keep quantified results verbatim. Do NOT remove other projects/companies.
+4. Gap skills: never fabricate — reference the closest adjacent experience or portfolio project.
+5. Add under the name an italic line: `*ATS Match: 100.0% — Senior Data Engineer @ Consensys*` (internal indicator; removable).
+6. Language: write the whole resume in **English (en-US)** (keep proper nouns and tech names).
+7. Output: single-column Markdown, standard section headers (2–3 pages OK for senior), ATS-safe (no tables/images/columns).
 
 ## Full job description (reference)
 
@@ -117,6 +117,6 @@
 &lt;li&gt;A collaborative mindset and eagerness to work with both technical and non-technical colleagues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Don&#39;t meet all the requirements? Don&#39;t sweat it. We’re passionate about building a diverse team of humans and as such, if you think you&#39;ve got what it takes for our chaotic-but-fun, remote-friendly, start-up environment—apply anyway, detailing your relevant transferable skills in your cover letter. While we have a pretty good idea of what we need, we&#39;re ready for you to challenge our thinking on who needs to be in this role&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;color: #e03e2d;&quot;&gt;&lt;span style=&quot;font-weight: 400; color: rgb(0, 0, 0);&quot;&gt;It is a requirement of employment in this position that applicants will be required to submit to background checks including but not limited to employment, education and criminal record checks. Further details will be provided to applicants that successfully meet the criteria for the position as determined by the company in its sole discretion. By submitting an application for employment, you are acknowledging and consenting to this requirement.&lt;/span&gt;&lt;em&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; &lt;br&gt;&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;content-pay-transparency&quot;&gt;&lt;div class=&quot;pay-input&quot;&gt;&lt;div class=&quot;description&quot;&gt;&lt;p&gt;&lt;em&gt;The salary range for US-based candidates only will be determined throughout the interview process depending on experience and skills.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;title&quot;&gt;US pay range (not including bonus, equity or other benefits)&lt;/div&gt;&lt;div class=&quot;pay-range&quot;&gt;&lt;span&gt;$156,000&lt;/span&gt;&lt;span class=&quot;divider&quot;&gt;&amp;mdash;&lt;/span&gt;&lt;span&gt;$187,000 USD&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;content-conclusion&quot;&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: #e03e2d;&quot;&gt;&lt;span style=&quot;font-weight: 400; color: rgb(0, 0, 0);&quot;&gt;It is a requirement of employment in this position that applicants will be required to submit to background checks including but not limited to employment, education and criminal record checks. Further details will be provided to applicants that successfully meet the criteria for the position as determined by the company in its sole discretion. By submitting an application for employment, you are acknowledging and consenting to this requirement.&lt;/span&gt;&lt;em&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; &lt;br&gt;&lt;/span&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;content-pay-transparency&quot;&gt;&lt;div class=&quot;pay-input&quot;&gt;&lt;div class=&quot;description&quot;&gt;&lt;p&gt;&lt;em&gt;The salary range listed for this role applies to US-based candidates only. Compensation for candidates based outside the US (including Canada, EMEA, and LATAM) will be determined based on location, experience, and skills during the interview process, and may differ from the listed US range.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;title&quot;&gt;US pay range (not including bonus, equity or other benefits)&lt;/div&gt;&lt;div class=&quot;pay-range&quot;&gt;&lt;span&gt;$156,000&lt;/span&gt;&lt;span class=&quot;divider&quot;&gt;&amp;mdash;&lt;/span&gt;&lt;span&gt;$187,000 USD&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;content-conclusion&quot;&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;In the rapidly evolving Web3 space, we believe that everyone is a builder. This expansive paradigm requires a range of backgrounds, talents, skills, and experiences to influence and shape the future. At Consensys, this diversity fuels our ability to shift control and redefine the realm of possibility. We are committed to ensuring that our technology empowers people and communities with economic and political agency through decentralized technologies. We welcome the range of perspectives and differences and celebrate them. We&#39;re excited to see how your unique skills as a builder can contribute to our vision, drive innovation, and help us shape a more inclusive Web3.&lt;/p&gt;
-&lt;p&gt;Consensys is an equal opportunity employer. All employment decisions are made without regard to race, color, national origin, ancestry, sex, gender, gender identity or expression, sexual orientation, age, genetic information, religion, disability, medical condition, pregnancy, marital status, family status, veteran status, or any other characteristic protected by law. Consensys is aware of fraudulent recruitment practices and
+&lt;p&gt;Consensys is an equal opportunity employer. All employment decisions are made without regard to race, color, national origin, ancestry, sex, gender, gender identity or expression, sexual orientation, age, genetic information, religion, disability, medical condition, preg

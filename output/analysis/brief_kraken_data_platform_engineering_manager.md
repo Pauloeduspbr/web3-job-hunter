@@ -1,9 +1,10 @@
 # Tailoring Brief — Data Platform Engineering Manager @ kraken
 
-- Generated: 2026-06-10T19:30:57.358217+00:00
+- Generated: 2026-06-13T18:14:56.540031+00:00
 - Job URL: https://jobs.ashbyhq.com/kraken.com/cf14a771-0586-41de-b379-fe301c3c8120
-- Match score: 86.4 (skills: 95.6)
+- Match score: 90.0 (skills: 100.0)
 - Location/Salary: Remote | United Kingdom | None
+- Target language: English (en-US)
 
 ## ATS keywords to mirror verbatim in the resume
 
@@ -39,6 +40,7 @@
 - glue
 - athena
 - lambda
+- aws
 - iceberg
 - parquet
 - dimensional modeling
@@ -50,34 +52,32 @@
 
 ## Gap skills (do NOT fabricate; mitigate via adjacent experience or portfolio)
 
-- aws
+- (none)
 
 ## Most relevant candidate evidence
 
 ### Achievements (quantified)
 - 40% maintenance time reduction via reusable Python automation framework
 - 60% storage reduction migrating legacy SQL to Parquet/Delta Lake
+- Multi-cloud migration Oracle -> AWS+Azure+GCP for Cielo payment data
 - Healthcare Data Lake on Apache Iceberg with PII/LGPD governance (Vault, KMS, Fernet)
 - 99.9% uptime SLA for Banco do Brasil Big Data environment (millions of daily transactions)
 - 50% processing time reduction via cluster optimization at Claro
-- 70% less manual intervention via Azure Automation pipelines
 
 ### Portfolio projects
-- **crypto-data-pipeline** (https://github.com/Pauloeduspbr/crypto-data-pipeline): Full pipeline with real data, 100 coins, 1.74s execution, 7/7 quality checks
 - **medallion-data-lake** (https://github.com/Pauloeduspbr/medallion-data-lake): Production-ready Bronze/Silver/Gold template with SCD Type 2, 36 tests
+- **crypto-data-pipeline** (https://github.com/Pauloeduspbr/crypto-data-pipeline): Full pipeline with real data, 100 coins, 1.74s execution, 7/7 quality checks
 - **dune-analytics-queries** (https://github.com/Pauloeduspbr/dune-analytics-queries): 12 blockchain analytics queries (DeFi, NFT, Solana, Ethereum, cross-chain)
 
 ## Generation instructions (for the LLM step)
 
-1. Base resume: `Resume_Paulo_Eduardo_Web3_v2.md` — keep structure, contacts and truthfulness.
-2. Rewrite PROFESSIONAL SUMMARY mirroring the job title and top 5 demanded skills.
-3. Reorder TECHNICAL SKILLS so matched/demanded skills appear first, using the
-   job's exact terminology (ATS keyword mirroring).
-4. In each experience entry, surface bullets that prove the demanded skills;
-   keep quantified results. Never invent experience for gap skills.
-5. For gap skills, reference the closest adjacent experience or portfolio project.
-6. Output: single-column Markdown, standard section headers, max 2 pages,
-   en-US, ATS-safe (no tables/images/columns).
+1. Base resume: `Resume_Paulo_Eduardo_Web3_v2.md` — stay FAITHFUL to it. Keep EVERY company and its key projects; never drop a role or collapse it to one line.
+2. Tailoring = reorder + emphasize + improve wording only. Lead the PROFESSIONAL SUMMARY with the job title and top demanded skills; reorder TECHNICAL SKILLS so matched/demanded skills appear first using the job's exact terms (ATS keyword mirroring).
+3. Within each experience entry, surface the bullets/projects that prove the demanded skills first; keep quantified results verbatim. Do NOT remove other projects/companies.
+4. Gap skills: never fabricate — reference the closest adjacent experience or portfolio project.
+5. Add under the name an italic line: `*ATS Match: 90.0% — Data Platform Engineering Manager @ kraken*` (internal indicator; removable).
+6. Language: write the whole resume in **English (en-US)** (keep proper nouns and tech names).
+7. Output: single-column Markdown, standard section headers (2–3 pages OK for senior), ATS-safe (no tables/images/columns).
 
 ## Full job description (reference)
 
