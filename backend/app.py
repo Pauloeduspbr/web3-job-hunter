@@ -8,6 +8,7 @@ frontend (frontend/). Run:
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import threading
@@ -78,6 +79,17 @@ def _save_status(job_id: str, status: str) -> dict:
     return statuses
 
 
+def _require_apify() -> None:
+    """Apify-backed stages need a token — fail with a clear, actionable 400
+    instead of a generic 500 deep inside the actor client."""
+    if not os.getenv("APIFY_TOKEN"):
+        raise HTTPException(
+            400,
+            "APIFY_TOKEN ausente. Copie .env.example para .env e defina seu token "
+            "(console.apify.com/account/integrations) para buscar/detalhar vagas do LinkedIn.",
+        )
+
+
 def _run_stage(name: str, fn):
     lock = _stage_locks.setdefault(name, threading.Lock())
     if not lock.acquire(blocking=False):
@@ -99,6 +111,7 @@ class SearchParams(BaseModel):
     location: str = "United States"
     max_jobs: int = 50
     published_within: str = "week"
+    include_description: bool = True
 
 
 class LinksPayload(BaseModel):
@@ -145,6 +158,7 @@ def _base_resume_path() -> Path:
 def status():
     return {
         "llm_mode": llm.get_mode(),
+        "apify_ready": bool(os.getenv("APIFY_TOKEN")),
         "raw_files": len(list(DATA_RAW.glob("*.json"))),
         "scored_jobs": len(_load_scored()),
         "resumes": len(list(OUTPUT_RESUMES.glob("*.md"))),
@@ -191,6 +205,7 @@ def _auto_score() -> int:
 
 @app.post("/api/pipeline/scrape")
 def run_scrape():
+    _require_apify()
     from scrape_jobs import scrape_links
     jobs = _run_stage("scrape", scrape_links)
     return {"scraped": len(jobs), "scored": _auto_score()}
@@ -198,9 +213,11 @@ def run_scrape():
 
 @app.post("/api/pipeline/search")
 def run_search(params: SearchParams):
+    _require_apify()
     from scrape_jobs import search_jobs
     jobs = _run_stage("search", lambda: search_jobs(
-        params.keywords, params.location, params.max_jobs, params.published_within))
+        params.keywords, params.location, params.max_jobs, params.published_within,
+        include_description=params.include_description))
     return {"found": len(jobs), "scored": _auto_score()}
 
 
@@ -225,6 +242,7 @@ class EnrichPayload(BaseModel):
 @app.post("/api/jobs/enrich")
 def enrich(payload: EnrichPayload):
     """Detail-scrape LinkedIn jobs (description + remote/hybrid). ~$0.005/job."""
+    _require_apify()
     valid = [str(j) for j in payload.job_ids if str(j).isdigit()]
     if not valid:
         raise HTTPException(400, "no valid LinkedIn job ids (numeric) to enrich")
