@@ -100,6 +100,29 @@ REMOTE_HINTS = re.compile(r"\bremote\b|\bremoto\b|work from home|anywhere|distri
 HYBRID_HINTS = re.compile(r"\bhybrid\b|\bh[ií]brid[oa]\b", re.I)
 ONSITE_HINTS = re.compile(r"\bon[- ]?site\b|in[- ]office|\bpresencial\b", re.I)
 
+# Signals of an industrial / maintenance / non-software-engineering role.
+# A job title can pass the title filter ("...de Dados") yet describe physical
+# asset reliability, plant maintenance, mechanical/electrical engineering, etc.
+# Only used to DEMOTE when ZERO software skills matched (see score_job).
+OFF_TARGET_RE = re.compile(
+    r"manuten[çc][ãa]o\s+(industrial|preventiva|preditiva|mec[âa]nica)"
+    r"|confiabilidade\s+d[eo]s?\s+ativos"
+    r"|gest[ãa]o\s+de\s+ativos"
+    r"|paradas?\s+programadas?"
+    r"|ch[ãa]o\s+de\s+f[áa]brica"
+    r"|\bPCM\b|\bCREA\b"
+    # "Engenharia (Mecânica, Elétrica, Química, Automação)" — allow space/paren
+    # between the word and the specialty
+    r"|engenharia[\s\(:]+(mec[âa]nica|el[ée]trica|eletr[ôo]nica|qu[íi]mica|civil"
+    r"|de\s+produ[çc][ãa]o|de\s+seguran[çc]a|de\s+automa[çc][ãa]o)"
+    r"|ativos\s+(f[íi]sicos|industriais)"
+    r"|equipamentos\s+industriais"
+    r"|(mechanical|electrical|chemical|civil)\s+engineering"
+    r"|plant\s+maintenance"
+    r"|field\s+service",
+    re.I,
+)
+
 
 def classify_workplace(job: dict, text: str) -> str:
     """remote | hybrid | onsite | unknown — explicit field wins over text hints."""
@@ -117,9 +140,18 @@ def classify_workplace(job: dict, text: str) -> str:
 
 def _flatten_profile_skills(profile: dict) -> dict[str, int]:
     flat: dict[str, int] = {}
-    for _category, skills in profile.get("skills", {}).items():
+    for category, skills in profile.get("skills", {}).items():
+        child_weights: list[int] = []
         for name, meta in skills.items():
-            flat[name] = int(meta.get("weight", 1)) if isinstance(meta, dict) else 1
+            weight = int(meta.get("weight", 1)) if isinstance(meta, dict) else 1
+            flat[name] = weight
+            child_weights.append(weight)
+        # The category name itself is a demandable umbrella token (aws, azure, gcp).
+        # The candidate owns a whole category of services under it, so the platform
+        # must count as a MATCHED skill — never a gap. Weight = strongest child.
+        # (Non-skill category names like "processing" are harmless: no lexicon token.)
+        if category not in flat and child_weights:
+            flat[category] = max(child_weights)
     # blockchain knowledge is evidenced by the portfolio, not work history
     flat.setdefault("blockchain_data", 2)
     flat.setdefault("streaming", 2)
@@ -158,6 +190,11 @@ def score_job(job: dict, profile: dict) -> dict:
     matched = [s for s in demanded if s in profile_skills]
     gaps = [s for s in demanded if s not in profile_skills]
 
+    # Off-target guard: industrial/maintenance signal AND zero software skills
+    # matched. Legit roles (e.g. Site Reliability Engineer) still match software
+    # skills, so they are protected and never flagged.
+    off_target = bool(OFF_TARGET_RE.search(text)) and not matched
+
     demanded_weight = sum(profile_skills.get(s, 2) for s in demanded) or 1
     matched_weight = sum(profile_skills[s] for s in matched)
     skill_score = 100.0 * matched_weight / demanded_weight
@@ -185,6 +222,11 @@ def score_job(job: dict, profile: dict) -> dict:
         score -= 15
         penalties.append(f"{workplace} (-15)")
 
+    # Apply off-target demotion last so the cap holds regardless of prior bonuses.
+    if off_target:
+        score = min(score, 10.0)
+        penalties.append("off-target: papel não-software (industrial/manutenção)")
+
     return {
         "job_id": job.get("id") or job.get("jobId") or job.get("url", "unknown"),
         "title": job.get("title"),
@@ -195,6 +237,7 @@ def score_job(job: dict, profile: dict) -> dict:
         "score": round(max(0.0, min(100.0, score)), 1),
         "skill_score": round(skill_score, 1),
         "workplace": workplace,
+        "off_target": off_target,
         "needs_detail": not description.strip(),
         "demanded_skills": demanded,
         "matched_skills": matched,
