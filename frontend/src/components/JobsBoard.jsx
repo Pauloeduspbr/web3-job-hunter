@@ -111,7 +111,7 @@ function JobCard({ job, busy, enriching, onStatus, onEnrich, onGenerate, onOpen 
           </div>
           {enrichable && (
             <button className="btn btn-ghost btn-sm" disabled={enriching}
-              title="Busca descrição completa + modalidade ($0.005)" onClick={() => onEnrich([job.job_id])}>
+              title="Busca descrição completa + modalidade (actor próprio · compute units)" onClick={() => onEnrich([job.job_id])}>
               <Icon name="search" size={14} /> Detalhar
             </button>
           )}
@@ -297,7 +297,7 @@ export default function JobsBoard({ jobs, notify, refresh }) {
               <button className="btn btn-soft btn-sm" disabled={enriching} onClick={() => onEnrich(enrichable.map((j) => j.job_id))}>
                 {enriching
                   ? <><span className="spin"><Icon name="refresh" size={14} /></span> enriquecendo…</>
-                  : <><Icon name="search" size={14} /> Detalhar {enrichable.length} (~${(enrichable.length * 0.005).toFixed(2)})</>}
+                  : <><Icon name="search" size={14} /> Detalhar {enrichable.length} (compute units)</>}
               </button>
             )}
           </div>

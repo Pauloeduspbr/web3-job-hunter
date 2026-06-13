@@ -1,10 +1,11 @@
-"""Scrape job postings via Apify actors.
+"""Scrape job postings via our OWN Apify actor (no paid third-party actors).
 
-Actors (validated against the live Apify API on 2026-06-10):
-- apimaestro/linkedin-job-detail  — job detail by job_id (from /jobs/view/<ID>/ URLs).
-  PAY_PER_EVENT $0.005/result, no cookies. Batch up to 100 IDs.
-- viralanalyzer/linkedin-jobs-multi-country — own-account actor, anonymous keyword
-  search (keywords + location + maxJobs + publishedWithin). Costs compute units only.
+Actor: viralanalyzer/linkedin-jobs-multi-country (own account, owner-skip PPE):
+- keyword search (keywords + location + maxJobs + publishedWithin), optionally
+  with includeDescription to bring the full "About the job" per listing;
+- detail mode (jobIds=[...]) returns title/company/location/description/criteria
+  per LinkedIn job ID via the free public guest endpoint + residential proxy.
+Both cost only Apify compute units/proxy for the owner — no per-result fee.
 """
 from __future__ import annotations
 
@@ -17,7 +18,6 @@ from apify_client import ApifyClient
 
 from config import DATA_RAW, LINKS_DIR, ensure_dirs, get_apify_token
 
-ACTOR_JOB_DETAIL = "apimaestro/linkedin-job-detail"
 ACTOR_JOB_SEARCH = "viralanalyzer/linkedin-jobs-multi-country"
 
 LINKEDIN_JOB_ID = re.compile(r"linkedin\.com/jobs/view/(\d+)")
@@ -134,9 +134,9 @@ def scrape_links() -> list[dict]:
 
 
 def enrich_jobs(job_ids: list[str]) -> list[dict]:
-    """Full detail (description + remote/hybrid + salary) for LinkedIn job IDs.
-
-    Uses apimaestro/linkedin-job-detail (~$0.005/job, batches of up to 100).
+    """Full detail (title/company/location/description + criteria) for LinkedIn
+    job IDs using OUR OWN actor's detail mode (free guest endpoint + residential
+    proxy). No paid third-party actor — owner pays only compute units/proxy.
     """
     job_ids = [str(j) for j in job_ids if str(j).isdigit()]
     if not job_ids:
@@ -145,8 +145,11 @@ def enrich_jobs(job_ids: list[str]) -> list[dict]:
     jobs: list[dict] = []
     for start in range(0, len(job_ids), 100):
         batch = job_ids[start:start + 100]
-        print(f"Enriching {len(batch)} job(s) via {ACTOR_JOB_DETAIL}")
-        run = _client().actor(ACTOR_JOB_DETAIL).call(run_input={"job_id": batch})
+        print(f"Enriching {len(batch)} job(s) via {ACTOR_JOB_SEARCH} (detail mode)")
+        run = _client().actor(ACTOR_JOB_SEARCH).call(run_input={
+            "jobIds": batch,
+            "proxyConfiguration": {"useApifyProxy": True, "apifyProxyGroups": ["RESIDENTIAL"]},
+        })
         items = _client().dataset(run["defaultDatasetId"]).list_items().items
         jobs.extend(_normalize(i) for i in items)
     _save(jobs, "linkedin_detail")

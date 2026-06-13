@@ -3,7 +3,7 @@ import { api } from '../api.js'
 import Icon from './Icon.jsx'
 
 const STAGES = [
-  { id: 'scrape', ico: 'link', label: 'Scrape de links', hint: 'Apify · pontua automático', cost: 'paid', costLabel: '~$0.005/vaga' },
+  { id: 'scrape', ico: 'link', label: 'Scrape de links', hint: 'detalhe via actor próprio · pontua automático', cost: 'free', costLabel: 'compute units' },
   { id: 'boards', ico: 'layers', label: 'Boards grátis', hint: 'Greenhouse · Ashby · Lever · RemoteOK · RSS', cost: 'free', costLabel: '$0' },
   { id: 'score', ico: 'refresh', label: 'Re-pontuar vagas', hint: 'match vs perfil', cost: 'free', costLabel: '$0' },
 ]
