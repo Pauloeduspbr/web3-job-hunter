@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { api } from './api.js'
-import PipelinePanel from './components/PipelinePanel.jsx'
+import Icon from './components/Icon.jsx'
+import StatCards from './components/StatCards.jsx'
 import InputsPanel from './components/InputsPanel.jsx'
-import JobTable from './components/JobTable.jsx'
+import PipelinePanel from './components/PipelinePanel.jsx'
+import JobsBoard from './components/JobsBoard.jsx'
 import OutputsPanel from './components/OutputsPanel.jsx'
 
 export default function App() {
@@ -30,31 +32,55 @@ export default function App() {
 
   useEffect(() => { refresh() }, [refresh])
 
+  const apiMode = status?.llm_mode === 'api'
+
   return (
-    <div className="app">
-      <header>
-        <h1>🎯 Web3 Job Hunter</h1>
-        {status && (
-          <div className="stats">
-            <span>{status.scored_jobs} vagas pontuadas</span>
-            <span>{status.resumes} CVs gerados</span>
-            <span className={status.llm_mode === 'api' ? 'badge api' : 'badge manual'}>
-              LLM: {status.llm_mode === 'api' ? 'Claude API' : 'Claude Code (manual)'}
+    <div className="app-shell">
+      <header className="appbar">
+        <div className="appbar-in">
+          <div className="brand">
+            <div className="brand-mark"><Icon name="target" size={22} /></div>
+            <div className="brand-text">
+              <h1>Web3 Job Hunter</h1>
+              <p><span className="who">Paulo Eduardo</span> · Senior Data Engineer · CV otimizado por vaga</p>
+            </div>
+          </div>
+          <div className="appbar-spacer" />
+          <div className="appbar-pills">
+            <span className="pill brand-pill"><Icon name="briefcase" size={13} /> <b>{status?.scored_jobs ?? 0}</b> vagas</span>
+            <span className="pill"><Icon name="file" size={13} /> <b>{status?.resumes ?? 0}</b> CVs</span>
+            <span className={`pill ${apiMode ? 'api' : 'manual'}`}>
+              <span className="dot" /> {apiMode ? 'Claude API' : 'Claude Code'}
             </span>
           </div>
-        )}
+        </div>
       </header>
 
-      {toast && <div className={toast.isError ? 'toast error' : 'toast'}>{toast.msg}</div>}
-
       <main>
-        <div className="row">
-          <InputsPanel notify={notify} refresh={refresh} />
-          <PipelinePanel notify={notify} refresh={refresh} />
+        <div className="container">
+          <StatCards jobs={jobs} status={status} />
+
+          <div className="section-head">
+            <h2>Workspace</h2>
+            <span className="sub">Suba o currículo, cole links e rode o funil de busca</span>
+          </div>
+          <div className="workspace">
+            <InputsPanel notify={notify} refresh={refresh} status={status} />
+            <PipelinePanel notify={notify} refresh={refresh} running={status?.running_stages || []} />
+          </div>
+
+          <JobsBoard jobs={jobs} notify={notify} refresh={refresh} />
+
+          <OutputsPanel resumes={resumes} briefs={briefs} notify={notify} />
         </div>
-        <JobTable jobs={jobs} notify={notify} refresh={refresh} />
-        <OutputsPanel resumes={resumes} briefs={briefs} notify={notify} />
       </main>
+
+      {toast && (
+        <div className={`toast ${toast.isError ? 'error' : 'ok'}`}>
+          <span className="t-ico"><Icon name={toast.isError ? 'zap' : 'check'} size={16} /></span>
+          <span>{toast.msg}</span>
+        </div>
+      )}
     </div>
   )
 }
