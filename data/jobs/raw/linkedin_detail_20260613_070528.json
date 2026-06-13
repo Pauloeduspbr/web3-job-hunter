@@ -1,0 +1,76 @@
+[
+  {
+    "workplace": "remote",
+    "id": 4422729133,
+    "title": "Engenheiro de Dados III",
+    "company": "Meta",
+    "companyName": "Meta",
+    "location": "Remote | Brazil",
+    "salary": null,
+    "description": "Quem é a Insi?\n\nSomos uma consultoria especializada em evolução digital. Mas, acima de tudo, somos uma empresa de gente. Gente que ouve antes de propor. Que vai ao essencial antes de apresentar solução. Que mede sucesso pelo que mudou de verdade, não pelo que foi implementado.\n\nCom mais de três décadas de história e presença global, acreditamos que a verdadeira transformação começa dentro: dentro das pessoas, das equipes, das organizações. E é essa convicção que orienta cada escolha que fazemos, cada projeto que entregamos, cada pessoa que desenvolvemos.\n\nAtribuições Principais\n\nEvoluir a modelagem de dados para que seja mais aderente às perguntas de negócio e aos casos de uso de analytics, ML e agentes de IA.Implementar boas práticas de modelagem de domínio (Data Domain) e de produtos de dados, incluindo rastreabilidade, reuso e versionamento.Apoiar a diretriz técnica da área e o desenvolvimento do time interno, promovendo mentoria e revisão de código.Atuar na migração e adaptação do ecossistema de dados para a Oracle Cloud Infrastructure (OCI), avaliando equivalências com o ambiente GCP atual (BigQuery, Composer, etc.).Estruturar pipelines de dados preparados para feature engineering, modelos de score e produtos de ML em linha crítica.Participar da evolução do catálogo de dados e do modelo de Data Domain, acelerando a criação de produtos de dados reutilizáveis.Garantir a qualidade, governança técnica e resiliência dos pipelines, eliminando dependências frágeis e silos de dados (Excel, Python na máquina do usuário, etc.).\n\nRequisitos\n\nSenioridade: Sênior ou Principal (7+ anos de experiência com dados em produção)\n\nArquitetura: Domínio de arquiteturas Lakehouse, Delta / Parquet, Spark, modelagem dimensional e Data Vault\n\nCloud? GCP (BigQuery, Dataflow, Composer) e/ou OCI; capacidade de transitar entre plataformas\n\nML/IA: Experiência com pipelines de feature engineering, MLflow ou equivalente, repositório de features\n\nSoft Skills: Pensamento analítico, capacidade de dialogar com stakeholders de negócio e traduzir requisitos em modelos de dados\n\nUso ativo de ferramentas de IA no dia a dia (Copilot, assistentes de código, agentes)\n\nDiferenciais: Passagem por empresas do segmento financeiro, fintechs ou e-commerce; vivência com times de produto\n\nLocalidade da posição: Remota\n\nPor que construir sua carreira na Insi?\n\nPorque aqui você pensa, decide e cria junto. Oferecemos autonomia, metas claras e um ambiente onde os Insiders têm espaço para interagir com diferentes tecnologias, participar de projetos desafiadores, trazer novas ideias e trabalhar de qualquer lugar do Brasil e (por que não?) do mundo.\n\nSomos uma das melhores empresas para se trabalhar no Brasil segundo o Great Place to Work e estamos entre os 10 melhores empregadores do Brasil segundo a revista\n\nQuais são nossos valores?\n\n▪ Somos pessoas servindo pessoas\n\n▪ Pensamos e agimos como donos\n\n▪ Temos gana por performance\n\n▪ Crescemos e aprendemos juntos\n\n▪ Buscamos excelência e a simplicidade\n\n▪ Temos inovação e criatividade no nosso DNA\n\nTodas as pessoas são bem-vindas independentemente de sua condição, deficiência, etnia, crença religiosa, orientação sexual, aparência, idade ou afins. Queremos que você cresça conosco em um ambiente acolhedor e repleto de oportunidades.\n\nSe identificou? Então, #VemSerInsi",
+    "url": "https://www.linkedin.com/jobs/view/4422729133/?trk=jobs_biz_prem_srch",
+    "postedAt": "2026-06-09T17:50:12",
+    "applicants": 0,
+    "scrapedAt": "2026-06-13T07:05:28.616225+00:00",
+    "source": "linkedin/apify",
+    "_raw": {
+      "job_info": {
+        "title": "Engenheiro de Dados III",
+        "description": "Quem é a Insi?\n\nSomos uma consultoria especializada em evolução digital. Mas, acima de tudo, somos uma empresa de gente. Gente que ouve antes de propor. Que vai ao essencial antes de apresentar solução. Que mede sucesso pelo que mudou de verdade, não pelo que foi implementado.\n\nCom mais de três décadas de história e presença global, acreditamos que a verdadeira transformação começa dentro: dentro das pessoas, das equipes, das organizações. E é essa convicção que orienta cada escolha que fazemos, cada projeto que entregamos, cada pessoa que desenvolvemos.\n\nAtribuições Principais\n\nEvoluir a modelagem de dados para que seja mais aderente às perguntas de negócio e aos casos de uso de analytics, ML e agentes de IA.Implementar boas práticas de modelagem de domínio (Data Domain) e de produtos de dados, incluindo rastreabilidade, reuso e versionamento.Apoiar a diretriz técnica da área e o desenvolvimento do time interno, promovendo mentoria e revisão de código.Atuar na migração e adaptação do ecossistema de dados para a Oracle Cloud Infrastructure (OCI), avaliando equivalências com o ambiente GCP atual (BigQuery, Composer, etc.).Estruturar pipelines de dados preparados para feature engineering, modelos de score e produtos de ML em linha crítica.Participar da evolução do catálogo de dados e do modelo de Data Domain, acelerando a criação de produtos de dados reutilizáveis.Garantir a qualidade, governança técnica e resiliência dos pipelines, eliminando dependências frágeis e silos de dados (Excel, Python na máquina do usuário, etc.).\n\nRequisitos\n\nSenioridade: Sênior ou Principal (7+ anos de experiência com dados em produção)\n\nArquitetura: Domínio de arquiteturas Lakehouse, Delta / Parquet, Spark, modelagem dimensional e Data Vault\n\nCloud? GCP (BigQuery, Dataflow, Composer) e/ou OCI; capacidade de transitar entre plataformas\n\nML/IA: Experiência com pipelines de feature engineering, MLflow ou equivalente, repositório de features\n\nSoft Skills: Pensamento analítico, capacidade de dialogar com stakeholders de negócio e traduzir requisitos em modelos de dados\n\nUso ativo de ferramentas de IA no dia a dia (Copilot, assistentes de código, agentes)\n\nDiferenciais: Passagem por empresas do segmento financeiro, fintechs ou e-commerce; vivência com times de produto\n\nLocalidade da posição: Remota\n\nPor que construir sua carreira na Insi?\n\nPorque aqui você pensa, decide e cria junto. Oferecemos autonomia, metas claras e um ambiente onde os Insiders têm espaço para interagir com diferentes tecnologias, participar de projetos desafiadores, trazer novas ideias e trabalhar de qualquer lugar do Brasil e (por que não?) do mundo.\n\nSomos uma das melhores empresas para se trabalhar no Brasil segundo o Great Place to Work e estamos entre os 10 melhores empregadores do Brasil segundo a revista\n\nQuais são nossos valores?\n\n▪ Somos pessoas servindo pessoas\n\n▪ Pensamos e agimos como donos\n\n▪ Temos gana por performance\n\n▪ Crescemos e aprendemos juntos\n\n▪ Buscamos excelência e a simplicidade\n\n▪ Temos inovação e criatividade no nosso DNA\n\nTodas as pessoas são bem-vindas independentemente de sua condição, deficiência, etnia, crença religiosa, orientação sexual, aparência, idade ou afins. Queremos que você cresça conosco em um ambiente acolhedor e repleto de oportunidades.\n\nSe identificou? Então, #VemSerInsi",
+        "location": "Brazil",
+        "location_id": "106057199",
+        "employment_status": "Full-time",
+        "is_remote_allowed": true,
+        "is_third_party_sourced": false,
+        "listed_at": "2026-06-09T17:50:12",
+        "expire_at": "2026-07-09T17:50:12",
+        "job_url": "https://www.linkedin.com/jobs/view/4422729133/?trk=jobs_biz_prem_srch",
+        "experience_level": "",
+        "industries": [
+          "IT Services and IT Consulting"
+        ],
+        "job_functions": [
+          "Other"
+        ],
+        "is_new": false,
+        "original_listed_at": "2026-06-09T17:50:12",
+        "job_state": "LISTED",
+        "workplace_types": [
+          "REMOTE"
+        ],
+        "country_code": "br",
+        "job_posting_id": 4422729133,
+        "is_reposted": false,
+        "job_application_limit_reached": false,
+        "eligible_for_referrals": false
+      },
+      "company_info": {
+        "name": "Meta",
+        "description": "Insi is a consultancy specializing in digital evolution, acting as a strategic partner to organizations on their transformation journey and connecting diagnosis, strategy, and execution to deliver tangible results. With a global presence, more than 2,700 employees across 27 countries, and over 200 clients, the company helps businesses identify opportunities, advance their digital maturity, and implement solutions that drive efficiency, growth, and competitiveness.\n\nDrawing on deep expertise in applied artificial intelligence, Insi runs projects end to end, from assessing scenarios and shaping strategy to delivering solutions powered by intelligent agents. Its Meta's role is to simplify digital transformation (DX), creating a journey that starts from where the customer is, understands what their challenges are, and works in partnership with them to achieve the generation of results for their business. In the digital transformation approach proposed by Meta, the best solution to the customers' challenge can be anywhere in the integrated portfolio of services and solutions, that is, a new project can start at any point in the cycle, keeping the customer always at the center and inspiring the end-to-end agile and cognitive culture. This digital evolution generates revenue growth, reduces costs, and, above all, values ​​people as the main capital of this transformation.\nMeta understands the importance of accelerating results to maintain relevant businesses in an increasingly competitive market, so it works with customized solutions suitable for different business models, segments, and sectors of the Brazilian and international markets. Digital transformation exists to optimize resources, simplify processes, reduce times, generate better results, and greater growth. Meta exists to make this transformation possible in companies and in society.\nWhat sets us apart is our ability to bring the human element to the center of digital transformation.",
+        "staff_count": 3541,
+        "industries": [
+          "IT Services and IT Consulting"
+        ],
+        "universal_name": "metaoficial",
+        "headquarters": {
+          "geographicArea": "SP",
+          "country": "BR",
+          "city": "São Paulo",
+          "postalCode": "04567-001",
+          "line1": "Rua Arizona 491",
+          "$type": "com.linkedin.common.Address"
+        },
+        "url": "https://www.linkedin.com/company/metaoficial",
+        "logo_url": "https://media.licdn.com/dms/image/v2/C4D0BAQHXTqaueX7X5A/company-logo_200_200/company-logo_200_200/0/1675356313243/metaoficial_logo?e=1782950400&v=beta&t=c3tnAtl8PbpN3-rW3reVdtUi9KSPWMK9HIJ1t90L9Uk",
+        "background_cover_url": "https://media.licdn.com/dms/image/v2/D4E3DAQGls3r7xMQUPw/image-scale_191_1128/B4EZ6C_AyHH8AU-/0/1780314017177/metaoficial_cover?e=1781942400&v=beta&t=6BvL7KkXiPnJoSFQ5Bvjq91knPUjqiIBjksxN-XVgyk"
+      },
+      "apply_details": {
+        "total_applies": 0,
+        "total_views": 0,
+        "is_application_limit_reached": false,
+        "application_url": "https://insi.jobs.recrut.ai/vagas/job/BVZBOX?source=linkedin",
+        "is_easy_apply": false
+      }
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "workplace": "hybrid",
+    "id": 4421995660,
+    "title": "Data Engineer",
+    "company": "Kamino",
+    "companyName": "Kamino",
+    "location": "São Paulo, São Paulo, Brazil",
+    "salary": null,
+    "description": "Junte-se ao time que está construindo a infraestrutura financeira do futuro da América Latina. 🚀\n\nSomos mais do que um software financeiro. A Kamino é a plataforma de gestão financeira mais completa para empresas de serviços de médio porte no Brasil.\n\nNosso grande diferencial está em unir um software que automatiza operações financeiras (contas a pagar, contas a receber e conciliação) à integração nativa de contas bancárias e cartão corporativo de crédito, tudo em uma única plataforma. Além disso, nos conectamos de forma fluida aos principais bancos e ERPs locais. O resultado é mais eficiência, controle e visibilidade, gerando economias significativas de tempo e custos para os nossos clientes.\n\nTrabalhar na Kamino é ter espaço para autonomia, crescimento e aprendizado contínuo. Nosso time é formado por pessoas dedicadas, curiosas, com senso de dono e obcecadas por entregar a melhor experiência para o cliente. Vem com a gente?\n\nSobre o desafio\n\nEstamos em busca de uma pessoa para se juntar ao nosso time de Data para Data Engineer.\n\nVocê busca um ambiente no qual fará parte de inovações desde o #Dia1?\n\nQuer ter opções de ações e fazer parte de uma startup bem capitalizada que está pronta para acelerar?\n\nSe a resposta for sim, continue acompanhando os requisitos que fazem sentido para essa oportunidade. ⛰️\n\nResponsabilidades e atribuições\n\n🧗🏽 Sua missão na Kamino:\n\nConstruir e manter os pipelines que alimentam nosso datalake, dados internos, ingestões de APIs externas, orquestração e qualidade;Modelar e evoluir as camadas, com foco em consistência, performance e custo;Ajudar na construção da camada semântica para consumo de dados via MCPs;Implementar e operar governança técnica;Monitorar custo e performance, propor materializações e otimizar partições;Validar hipóteses, métricas e inconsistências antes que cheguem à camada de consumo.\n\n\nRequisitos e qualificações\n\n🎒 O que você traz na bagagem?\n\nSQL avançado e experiência prática com BigQuery (ou warehouses equivalentes, como Snowflake, Redshift ou Databricks);Python para construção e manutenção de pipelines de dados (Airflow, Dataflow ou similares);Experiência com modelagem dimensional e arquiteturas em camadas (medallion ou equivalente);Familiaridade com CDC e ingestão de dados transacionais;Capacidade de interpretar demandas de negócio, traduzir perguntas em modelos de dados e validar resultados;Conforto para atuar em ambientes em evolução, onde plataforma e produto crescem juntos;Experiência com provedores de nuvem, como GCP, Azure ou AWS;Experiência em fintechs, empresas SaaS B2B ou produtos financeiros será considerada um diferencial;Vivência com governança de dados em ambientes multi-tenant será considerada um diferencial;Interesse ou experiência prática com LLMs aplicados a dados, incluindo text-to-SQL, MCPs e RAG sobre dados estruturados;Familiaridade com ferramentas de desenvolvimento assistido por IA, como Claude Code, Cursor ou similares.\n\n\nInformações adicionais\n\nOlha o que preparamos para você estar cheio de energia na sua caminhada com a gente:\n\nPlano Saúde SulAmérica Especial 100 e incluindo dependentes legais, sem mensalidade e sem coparticipação - A saúde precisa estar em dia, né?Plano Odontológico OdontoMais SulAmérica - Para sorrir com tranquilidade.Seguro de Vida - Porque se sentir protegido faz toda a diferença.Cartão Flash - Benefício flexível de verdade. Esse não pode faltar jamais!Wellhub (Gympass) e TotalPass - Você escolhe!Day off na semana do aniversário - De lei, você precisa comemorar na data mais importante do ano.Possibilidade de receber Stock Options após 1 ano de contrato - Isso aqui é elite!\n\n\nNós trabalhamos no modelo híbrido e estamos no escritório 3x na semana, ok?\n\nBora com a gente? LFG!!!",
+    "url": "https://www.linkedin.com/jobs/view/4421995660/?trk=jobs_biz_prem_srch",
+    "postedAt": "2026-06-09T00:37:37",
+    "applicants": 0,
+    "scrapedAt": "2026-06-13T07:24:13.313393+00:00",
+    "source": "linkedin/apify",
+    "_raw": {
+      "job_info": {
+        "title": "Data Engineer",
+        "description": "Junte-se ao time que está construindo a infraestrutura financeira do futuro da América Latina. 🚀\n\nSomos mais do que um software financeiro. A Kamino é a plataforma de gestão financeira mais completa para empresas de serviços de médio porte no Brasil.\n\nNosso grande diferencial está em unir um software que automatiza operações financeiras (contas a pagar, contas a receber e conciliação) à integração nativa de contas bancárias e cartão corporativo de crédito, tudo em uma única plataforma. Além disso, nos conectamos de forma fluida aos principais bancos e ERPs locais. O resultado é mais eficiência, controle e visibilidade, gerando economias significativas de tempo e custos para os nossos clientes.\n\nTrabalhar na Kamino é ter espaço para autonomia, crescimento e aprendizado contínuo. Nosso time é formado por pessoas dedicadas, curiosas, com senso de dono e obcecadas por entregar a melhor experiência para o cliente. Vem com a gente?\n\nSobre o desafio\n\nEstamos em busca de uma pessoa para se juntar ao nosso time de Data para Data Engineer.\n\nVocê busca um ambiente no qual fará parte de inovações desde o #Dia1?\n\nQuer ter opções de ações e fazer parte de uma startup bem capitalizada que está pronta para acelerar?\n\nSe a resposta for sim, continue acompanhando os requisitos que fazem sentido para essa oportunidade. ⛰️\n\nResponsabilidades e atribuições\n\n🧗🏽 Sua missão na Kamino:\n\nConstruir e manter os pipelines que alimentam nosso datalake, dados internos, ingestões de APIs externas, orquestração e qualidade;Modelar e evoluir as camadas, com foco em consistência, performance e custo;Ajudar na construção da camada semântica para consumo de dados via MCPs;Implementar e operar governança técnica;Monitorar custo e performance, propor materializações e otimizar partições;Validar hipóteses, métricas e inconsistências antes que cheguem à camada de consumo.\n\n\nRequisitos e qualificações\n\n🎒 O que você traz na bagagem?\n\nSQL avançado e experiência prática com BigQuery (ou warehouses equivalentes, como Snowflake, Redshift ou Databricks);Python para construção e manutenção de pipelines de dados (Airflow, Dataflow ou similares);Experiência com modelagem dimensional e arquiteturas em camadas (medallion ou equivalente);Familiaridade com CDC e ingestão de dados transacionais;Capacidade de interpretar demandas de negócio, traduzir perguntas em modelos de dados e validar resultados;Conforto para atuar em ambientes em evolução, onde plataforma e produto crescem juntos;Experiência com provedores de nuvem, como GCP, Azure ou AWS;Experiência em fintechs, empresas SaaS B2B ou produtos financeiros será considerada um diferencial;Vivência com governança de dados em ambientes multi-tenant será considerada um diferencial;Interesse ou experiência prática com LLMs aplicados a dados, incluindo text-to-SQL, MCPs e RAG sobre dados estruturados;Familiaridade com ferramentas de desenvolvimento assistido por IA, como Claude Code, Cursor ou similares.\n\n\nInformações adicionais\n\nOlha o que preparamos para você estar cheio de energia na sua caminhada com a gente:\n\nPlano Saúde SulAmérica Especial 100 e incluindo dependentes legais, sem mensalidade e sem coparticipação - A saúde precisa estar em dia, né?Plano Odontológico OdontoMais SulAmérica - Para sorrir com tranquilidade.Seguro de Vida - Porque se sentir protegido faz toda a diferença.Cartão Flash - Benefício flexível de verdade. Esse não pode faltar jamais!Wellhub (Gympass) e TotalPass - Você escolhe!Day off na semana do aniversário - De lei, você precisa comemorar na data mais importante do ano.Possibilidade de receber Stock Options após 1 ano de contrato - Isso aqui é elite!\n\n\nNós trabalhamos no modelo híbrido e estamos no escritório 3x na semana, ok?\n\nBora com a gente? LFG!!!",
+        "location": "São Paulo, São Paulo, Brazil",
+        "location_id": "104746682",
+        "employment_status": "Full-time",
+        "is_remote_allowed": false,
+        "is_third_party_sourced": false,
+        "listed_at": "2026-06-09T00:37:37",
+        "expire_at": "2026-07-09T00:37:37",
+        "job_url": "https://www.linkedin.com/jobs/view/4421995660/?trk=jobs_biz_prem_srch",
+        "experience_level": "",
+        "industries": [
+          "IT Services and IT Consulting"
+        ],
+        "job_functions": [
+          "Other"
+        ],
+        "is_new": false,
+        "original_listed_at": "2026-06-09T00:37:37",
+        "job_state": "LISTED",
+        "workplace_types": [
+          "HYBRID"
+        ],
+        "country_code": "br",
+        "job_posting_id": 4421995660,
+        "is_reposted": false,
+        "job_application_limit_reached": false,
+        "eligible_for_referrals": false
+      },
+      "company_info": {
+        "name": "Kamino",
+        "description": "Kamino is a the most complete financial management software for medium-sized service companies in Brazil.\nA key differentiation is the combination of software that automates financial operations (accounts payables, accounts receivables and reconciliation), a natively embedded banking and corporate credit card offering, and seamless integration into top local banks and ERPs. The resulting gains in efficiency, control and visibility save Kamino’s clients significant time and costs.",
+        "staff_count": 173,
+        "industries": [
+          "Financial Services"
+        ],
+        "universal_name": "kaminolatam",
+        "headquarters": {
+          "geographicArea": "São Paulo",
+          "country": "BR",
+          "city": "São Paulo",
+          "$type": "com.linkedin.common.Address"
+        },
+        "url": "https://www.linkedin.com/company/kaminolatam",
+        "logo_url": "https://media.licdn.com/dms/image/v2/C4D0BAQGMLgucWTJMYg/company-logo_200_200/company-logo_200_200/0/1662487892226/kaminolatam_logo?e=1782950400&v=beta&t=4_FeAtwVpU_EKBvviSSqt2ylMc3ArFqvETdpLM5V7Dk",
+        "background_cover_url": "https://media.licdn.com/dms/image/v2/D4D3DAQF-mg5nSDMLmg/image-scale_191_1128/B4DZ47JH_7HMAU-/0/1779108708574/kaminolatam_cover?e=1781942400&v=beta&t=BCv1RZ9i7qxxBsiwp74spmDruO7F2PUmpiw2bHlpwsQ"
+      },
+      "apply_details": {
+        "total_applies": 0,
+        "total_views": 0,
+        "is_application_limit_reached": false,
+        "application_url": "https://kamino.gupy.io/job/eyJqb2JJZCI6MTE0MjU2MTgsInNvdXJjZSI6ImxpbmtlZGluIn0=?jobBoardSource=linkedin",
+        "is_easy_apply": false
+      }
+    }
+  }
+]
