@@ -21,13 +21,28 @@ in the BASE RESUME or the CANDIDATE PROFILE provided.
 never fabricated.
 4. English level is B2 upper-intermediate — never inflate to advanced/fluent.
 
-ATS FORMAT RULES:
-- Single column Markdown, standard headers (Professional Summary, Skills, \
-Work Experience, Education, Certifications, Languages).
+FIDELITY RULES (most important — do NOT gut the career history):
+5. Keep EVERY company/role from the BASE RESUME and its key projects. NEVER drop a \
+company, NEVER collapse roles into one-line summaries, NEVER invent new ones.
+6. Tailoring = REORDER and EMPHASIZE: lead the summary and skills with what matches \
+the job, reorder/surface the most relevant projects and bullets first, and improve \
+wording. It must NOT remove experience or projects. The full history stays.
+7. Preserve the BASE RESUME's structure (per-company projects as sub-sections). \
+A senior CV of 2–3 pages is expected; do not force it to 2 pages by deleting content.
+
+ATS & FORMAT RULES:
+- Single column Markdown, standard headers (Professional Summary, Technical Skills, \
+Professional Experience, Education, Certifications, Languages).
 - Mirror the job's ATS keywords verbatim (from the brief) in summary, skills and \
-experience bullets.
-- Contact info in the body. Dates as "Mon YYYY". Max 2 pages. No tables/images.
-- ~60% of bullets quantified, action verbs first.
+experience bullets — without fabricating.
+- Contact info in the body. Dates as "Mon YYYY". No tables/images. Action verbs first.
+- Write in the LANGUAGE requested in the brief (English by default; Portuguese when \
+the brief says the job is Brazilian/PT). Keep proper nouns and tech names as-is.
+
+ATS MATCH LINE:
+- Add, immediately under the name/title block (before the summary), one italic line: \
+"*ATS Match: <N>% — <Role> @ <Company>*", taking <N> from the brief's match score. \
+This is an internal indicator the candidate may remove before sending.
 
 Output ONLY the final resume in Markdown — no preamble, no commentary."""
 

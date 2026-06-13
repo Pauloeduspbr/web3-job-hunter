@@ -33,6 +33,10 @@ from backend.exporters import markdown_to_docx, markdown_to_pdf  # noqa: E402
 
 CURRICULO_DIR = PROJECT_ROOT / "Curriculo"
 DEFAULT_BASE_RESUME = PROJECT_ROOT / "Resume_Paulo_Eduardo_Web3_v2.md"
+DEFAULT_BASE_RESUME_PT = PROJECT_ROOT / "Resume_Paulo_Eduardo_PT.md"
+BR_LOCATION_RE = re.compile(
+    r"brazil|brasil|s[ãa]o paulo|rio de janeiro|paran[áa]|minas gerais|"
+    r"belo horizonte|curitiba|bel[ée]m|fortaleza", re.I)
 
 app = FastAPI(title="Web3 Job Hunter", version="1.1")
 app.add_middleware(
@@ -319,7 +323,11 @@ def generate_cv(payload: GeneratePayload):
         )
         return result
 
-    base_resume = _base_resume_path()
+    # Brazilian postings → Portuguese master; everything else → English base.
+    job = scored[index]
+    is_br = bool(BR_LOCATION_RE.search(f"{job.get('location', '')} {job.get('title', '')}"))
+    base_resume = (DEFAULT_BASE_RESUME_PT if is_br and DEFAULT_BASE_RESUME_PT.exists()
+                   else _base_resume_path())
     try:
         resume_md = llm.generate_cv_via_api(
             brief_path.read_text(encoding="utf-8"),

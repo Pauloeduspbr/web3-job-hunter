@@ -50,6 +50,13 @@ def build_brief(scored_job: dict, raw_job: dict | None = None) -> str:
             raw_job.get("description") or raw_job.get("descriptionText") or ""
         )
 
+    # Output language: Portuguese for Brazilian postings, English otherwise.
+    blob = f"{scored_job.get('location', '')} {scored_job.get('title', '')} {description}".lower()
+    language = ("Portuguese (pt-BR)"
+                if re.search(r"brazil|brasil|s[ãa]o paulo|rio de janeiro|paran[áa]|"
+                             r"minas gerais|belo horizonte|curitiba|bel[ée]m|fortaleza", blob)
+                else "English (en-US)")
+
     lines = [
         f"# Tailoring Brief — {scored_job.get('title')} @ {scored_job.get('company')}",
         "",
@@ -57,6 +64,7 @@ def build_brief(scored_job: dict, raw_job: dict | None = None) -> str:
         f"- Job URL: {scored_job.get('url')}",
         f"- Match score: {scored_job.get('score')} (skills: {scored_job.get('skill_score')})",
         f"- Location/Salary: {scored_job.get('location')} | {scored_job.get('salary')}",
+        f"- Target language: {language}",
         "",
         "## ATS keywords to mirror verbatim in the resume",
         "",
@@ -88,15 +96,19 @@ def build_brief(scored_job: dict, raw_job: dict | None = None) -> str:
         "",
         "## Generation instructions (for the LLM step)",
         "",
-        f"1. Base resume: `{BASE_RESUME.name}` — keep structure, contacts and truthfulness.",
-        "2. Rewrite PROFESSIONAL SUMMARY mirroring the job title and top 5 demanded skills.",
-        "3. Reorder TECHNICAL SKILLS so matched/demanded skills appear first, using the",
-        "   job's exact terminology (ATS keyword mirroring).",
-        "4. In each experience entry, surface bullets that prove the demanded skills;",
-        "   keep quantified results. Never invent experience for gap skills.",
-        "5. For gap skills, reference the closest adjacent experience or portfolio project.",
-        "6. Output: single-column Markdown, standard section headers, max 2 pages,",
-        "   en-US, ATS-safe (no tables/images/columns).",
+        f"1. Base resume: `{BASE_RESUME.name}` — stay FAITHFUL to it. Keep EVERY company "
+        "and its key projects; never drop a role or collapse it to one line.",
+        "2. Tailoring = reorder + emphasize + improve wording only. Lead the PROFESSIONAL "
+        "SUMMARY with the job title and top demanded skills; reorder TECHNICAL SKILLS so "
+        "matched/demanded skills appear first using the job's exact terms (ATS keyword mirroring).",
+        "3. Within each experience entry, surface the bullets/projects that prove the demanded "
+        "skills first; keep quantified results verbatim. Do NOT remove other projects/companies.",
+        "4. Gap skills: never fabricate — reference the closest adjacent experience or portfolio project.",
+        f"5. Add under the name an italic line: `*ATS Match: {scored_job.get('score')}% — "
+        f"{scored_job.get('title')} @ {scored_job.get('company')}*` (internal indicator; removable).",
+        f"6. Language: write the whole resume in **{language}** (keep proper nouns and tech names).",
+        "7. Output: single-column Markdown, standard section headers (2–3 pages OK for senior), "
+        "ATS-safe (no tables/images/columns).",
         "",
         "## Full job description (reference)",
         "",
