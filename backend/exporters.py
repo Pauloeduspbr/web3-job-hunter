@@ -18,6 +18,7 @@ from docx.oxml.ns import qn
 from docx.shared import Pt, RGBColor
 
 from fpdf import FPDF
+from fpdf.enums import XPos, YPos
 
 # ---------- palette (matches the web app brand) ----------
 INK = (31, 41, 55)       # gray-800 — body text / name
@@ -208,11 +209,16 @@ def markdown_to_docx(md_path: Path, out_path: Path) -> Path:
 #  PDF
 # ============================================================
 class _ResumePDF(FPDF):
-    """Single-column, text-based PDF — premium look, ATS-safe."""
+    """Single-column, text-based PDF — premium look, ATS-safe.
+
+    Uses multi_cell (not write) so wrapping breaks cleanly BETWEEN lines and
+    page breaks never split a word/bullet mid-sentence; headers get orphan
+    protection so a section/role title never sits alone at a page bottom.
+    """
 
     def __init__(self):
         super().__init__(format="A4")
-        self.set_margins(17, 14, 17)
+        self.set_margins(17, 13, 17)
         self.set_auto_page_break(auto=True, margin=14)
         fonts = _resolve_fonts()
         if fonts:
@@ -225,70 +231,75 @@ class _ResumePDF(FPDF):
             self._fam = "Helvetica"  # core latin-1 fallback when no system TTF exists
         self.add_page()
 
-    def rule(self, color=RULE, width=0.3, gap=1.2) -> None:
+    def ensure(self, mm: float) -> None:
+        """Orphan control: start a new page if less than `mm` remains."""
+        if (self.h - self.b_margin) - self.get_y() < mm:
+            self.add_page()
+
+    def rule(self, color=RULE, width=0.4, gap=1.2) -> None:
         self.set_draw_color(*color)
         self.set_line_width(width)
         y = self.get_y() + gap
         self.line(self.l_margin, y, self.w - self.r_margin, y)
         self.set_y(y + gap)
 
-    def runs(self, text: str, size: float, *, style="", color=INK, lh=0.52, after=0.0) -> None:
-        """Write a line honoring **bold**, with a base style/color, then break."""
+    def block(self, text: str, size: float, *, style: str = "", color=INK,
+              before: float = 0.0, after: float = 1.0, bullet: bool = False) -> None:
+        """Render one markdown block via multi_cell (clean line-level wrapping)."""
         text = _clean_inline(text)
-        self.set_text_color(*color)
-        self.set_font(self._fam, style, size)
-        pos = 0
-        for m in BOLD_RE.finditer(text):
-            if m.start() > pos:
-                self.set_font(self._fam, style, size)
-                self.write(size * lh, text[pos:m.start()])
+        cw = self.w - self.l_margin - self.r_margin
+        lh = size * 0.52
+        if before:
+            self.ln(before)
+        if bullet:
+            self.set_x(self.l_margin)
+            self.set_text_color(*ACCENT)
             self.set_font(self._fam, "B", size)
-            self.write(size * lh, m.group(1))
-            pos = m.end()
-        if pos < len(text):
+            self.cell(4.5, lh, "•")
+            self.set_text_color(*color)
             self.set_font(self._fam, style, size)
-            self.write(size * lh, text[pos:])
-        self.ln(size * lh)
+            self.multi_cell(cw - 4.5, lh, text, markdown=True,
+                            new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        else:
+            self.set_text_color(*color)
+            self.set_font(self._fam, style, size)
+            self.multi_cell(cw, lh, text, markdown=True,
+                            new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         if after:
             self.ln(after)
-
-    def bullet(self, text: str, size: float = 9.4) -> None:
-        saved = self.l_margin
-        self.set_left_margin(saved + 6)   # wrapped lines hang under the text
-        self.set_x(saved + 1.5)
-        self.set_text_color(*ACCENT)
-        self.set_font(self._fam, "B", size)
-        self.write(size * 0.52, "•")
-        self.set_x(saved + 6)
-        self.runs("  " + text, size, color=INK, after=0.4)
-        self.set_left_margin(saved)
 
 
 def markdown_to_pdf(md_path: Path, out_path: Path) -> Path:
     pdf = _ResumePDF()
     for kind, text in _parse_blocks(md_path.read_text(encoding="utf-8")):
         if kind == "name":
-            pdf.runs(text, 21, style="B", color=INK, after=0.4)
+            pdf.block(text, 20, style="B", color=INK, after=0.6)
         elif kind == "title":
-            pdf.runs(text.upper(), 11.5, style="B", color=ACCENT, after=1.2)
+            pdf.block(text.upper(), 11, style="B", color=ACCENT, after=1.0)
         elif kind == "contact":
-            pdf.runs(text, 8.6, color=MUTED, lh=0.5)
+            if "ats match" in text.lower():
+                pdf.block(text, 9.2, style="B", color=ACCENT, after=1.0)
+            else:
+                pdf.block(text, 8.6, color=MUTED, after=0.5)
         elif kind == "hr":
-            pdf.rule(color=ACCENT, width=0.5, gap=1.0)
+            pdf.rule(color=ACCENT, width=0.5)
         elif kind == "section":
-            pdf.ln(2.2)
-            pdf.runs(text.upper(), 11, style="B", color=ACCENT, lh=0.5)
-            pdf.rule(color=ACCENT, width=0.4, gap=0.6)
-            pdf.ln(0.6)
+            pdf.ensure(26)  # keep header + first line together
+            pdf.block(text.upper(), 11, style="B", color=ACCENT, before=2.4, after=0.2)
+            pdf.rule(color=ACCENT, width=0.4, gap=0.7)
+            pdf.ln(0.8)
         elif kind == "role":
-            pdf.ln(1.4)
-            pdf.runs(text, 10.3, style="B", color=INK, lh=0.5)
+            pdf.ensure(22)
+            pdf.block(text, 10.3, style="B", color=INK, before=1.6, after=0.2)
         elif kind == "dates":
-            pdf.runs(text, 8.8, style="I", color=MUTED, lh=0.5, after=0.6)
+            pdf.block(text, 8.8, style="I", color=MUTED, after=0.8)
         elif kind == "bullet":
-            pdf.bullet(text)
-        else:  # para
-            pdf.runs(text, 9.5, color=INK, after=1.0)
+            pdf.block(text, 9.4, color=INK, bullet=True, after=0.6)
+        elif ALL_BOLD_RE.match(text.strip()):  # per-company project sub-header
+            pdf.ensure(18)
+            pdf.block(text, 9.6, color=INK, before=1.2, after=0.4)
+        else:  # normal paragraph (e.g., summary)
+            pdf.block(text, 9.5, color=INK, before=0.4, after=0.9)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pdf.output(str(out_path))
