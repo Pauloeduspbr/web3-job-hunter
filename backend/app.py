@@ -156,6 +156,42 @@ def _base_resume_path() -> Path:
     return candidates[0] if candidates else DEFAULT_BASE_RESUME
 
 
+def _base_resume_for(job: dict) -> Path:
+    """Portuguese master for Brazilian postings, English base otherwise."""
+    is_br = bool(BR_LOCATION_RE.search(f"{job.get('location', '')} {job.get('title', '')}"))
+    if is_br and DEFAULT_BASE_RESUME_PT.exists():
+        return DEFAULT_BASE_RESUME_PT
+    return _base_resume_path()
+
+
+def _tailor_resume_offline(job: dict, base_md: str, is_br: bool) -> str:
+    """Deterministic, no-LLM tailoring used in manual mode (no ANTHROPIC_API_KEY).
+
+    Stays 100% faithful to the base resume (full history preserved) and only
+    ADDS two ATS-tailoring lines: a removable match-score line under the title
+    and a job-keyword line at the top of the skills section. Guarantees the
+    "Generate CV" button always produces a downloadable resume.
+    """
+    score = job.get("score")
+    ats_line = f"*ATS Match: {score}% — {job.get('title')} @ {job.get('company')}*"
+    matched = job.get("matched_skills") or []
+    top = ", ".join(s.replace("_", " ") for s in matched[:12])
+    label = "Skills-chave para esta vaga" if is_br else "Top skills for this role"
+    skills_line = f"**{label}:** {top}" if top else ""
+
+    out, did_ats, did_skills = [], False, False
+    for ln in base_md.splitlines():
+        out.append(ln)
+        if not did_ats and re.match(r"^\*\*.+\*\*$", ln.strip()):
+            out += ["", ats_line]
+            did_ats = True
+        if (not did_skills and skills_line
+                and re.match(r"^##\s+(technical skills|skills t[ée]cnicas)\s*$", ln.strip(), re.I)):
+            out += ["", skills_line]
+            did_skills = True
+    return "\n".join(out)
+
+
 # ---------- status / jobs ----------
 
 @app.get("/api/status")
@@ -316,34 +352,53 @@ def generate_cv(payload: GeneratePayload):
 
     result = {"brief": brief_path.name, "mode": llm.get_mode(), "job": scored[index].get("title")}
 
-    if llm.get_mode() == "manual":
-        result["message"] = (
-            "Brief gerado. Sem ANTHROPIC_API_KEY no .env: gere o CV no Claude Code com "
-            f"'Gere o CV alinhado usando output/analysis/{brief_path.name}'."
-        )
-        return result
-
     # Brazilian postings → Portuguese master; everything else → English base.
     job = scored[index]
     is_br = bool(BR_LOCATION_RE.search(f"{job.get('location', '')} {job.get('title', '')}"))
-    base_resume = (DEFAULT_BASE_RESUME_PT if is_br and DEFAULT_BASE_RESUME_PT.exists()
-                   else _base_resume_path())
-    try:
-        resume_md = llm.generate_cv_via_api(
-            brief_path.read_text(encoding="utf-8"),
-            base_resume.read_text(encoding="utf-8"),
-            PROFILE_PATH.read_text(encoding="utf-8"),
-        )
-    except Exception as exc:
-        raise HTTPException(502, f"Claude API error: {exc}")
-
+    base_resume = _base_resume_for(job)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     slug = re.sub(r"^brief_|\.md$", "", brief_path.name)
     out = OUTPUT_RESUMES / f"Resume_{slug}_{stamp}.md"
+
+    mode = llm.get_mode()
+    score = job.get("score")
+    base_text = base_resume.read_text(encoding="utf-8")
+
+    if mode == "claude_code":
+        # LOCAL DEV: generate with the Claude Code subscription (no API token).
+        # On any CLI failure, fall back to deterministic offline so the button
+        # never leaves the user without a CV.
+        try:
+            resume_md = llm.generate_cv_via_claude_code(
+                brief_path.read_text(encoding="utf-8"), base_text,
+                PROFILE_PATH.read_text(encoding="utf-8"))
+            result["message"] = (
+                f"CV gerado via Claude Code (subscrição) — base {base_resume.name}, "
+                f"compatibilidade {score}%.")
+        except Exception as exc:
+            resume_md = _tailor_resume_offline(job, base_text, is_br)
+            result["message"] = (
+                f"Claude Code indisponível ({str(exc)[:120]}); CV gerado offline "
+                f"(fiel, compatibilidade {score}%).")
+    elif mode == "api":
+        # PRODUCTION: ANTHROPIC_API_KEY.
+        try:
+            resume_md = llm.generate_cv_via_api(
+                brief_path.read_text(encoding="utf-8"), base_text,
+                PROFILE_PATH.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise HTTPException(502, f"Claude API error: {exc}")
+        result["message"] = f"CV gerado via Claude API — base {base_resume.name}."
+    else:  # manual / offline deterministic fallback
+        resume_md = _tailor_resume_offline(job, base_text, is_br)
+        result["message"] = (
+            f"CV gerado offline (fiel a {base_resume.name}, compatibilidade {score}%). "
+            "Instale/login no Claude Code, ou defina ANTHROPIC_API_KEY, para tailoring com IA.")
+
     out.write_text(resume_md, encoding="utf-8")
+    result["mode"] = mode
     result["resume"] = out.name
     result["base_resume"] = base_resume.name
-    result["message"] = f"CV gerado via Claude API (base: {base_resume.name})."
     return result
 
 

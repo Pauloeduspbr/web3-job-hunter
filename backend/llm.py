@@ -1,14 +1,21 @@
 """Hybrid CV generation.
 
-- mode "api"    — ANTHROPIC_API_KEY present: calls Claude (claude-opus-4-8) and
-                  returns the tailored resume Markdown. Used when the app runs
-                  online/autonomously.
-- mode "manual" — no key: the endpoint returns the brief path and the user
-                  generates the CV in a Claude Code session (zero extra cost).
+Mode is resolved by environment, NOT hardcoded:
+- "claude_code" — the `claude` CLI is on PATH (LOCAL DEV): generate via the
+                  Claude Code subscription, no API token, no per-call cost.
+- "api"         — production: ANTHROPIC_API_KEY set and no claude CLI; calls
+                  Claude (claude-opus-4-8) directly.
+- "manual"      — neither available: deterministic offline tailoring fallback.
+
+Local dev uses the subscription; production uses the token.
 """
 from __future__ import annotations
 
 import os
+import re
+import shutil
+import subprocess
+import tempfile
 
 SYSTEM_PROMPT = """You are an expert resume writer specialized in ATS-optimized \
 resumes for senior data engineering roles.
@@ -48,7 +55,44 @@ Output ONLY the final resume in Markdown — no preamble, no commentary."""
 
 
 def get_mode() -> str:
-    return "api" if os.getenv("ANTHROPIC_API_KEY") else "manual"
+    # Local dev → Claude Code subscription (claude CLI present, no token cost).
+    # Production → ANTHROPIC_API_KEY. Offline deterministic fallback otherwise.
+    if shutil.which("claude"):
+        return "claude_code"
+    if os.getenv("ANTHROPIC_API_KEY"):
+        return "api"
+    return "manual"
+
+
+def _user_content(brief_md: str, base_resume_md: str, profile_yaml: str) -> str:
+    return (
+        "Generate the tailored resume for this job.\n\n"
+        f"## TAILORING BRIEF (job requirements + ATS keywords + gaps)\n\n{brief_md}\n\n"
+        f"## BASE RESUME\n\n{base_resume_md}\n\n"
+        f"## CANDIDATE PROFILE (source of truth — do not exceed it)\n\n{profile_yaml}"
+    )
+
+
+def generate_cv_via_claude_code(brief_md: str, base_resume_md: str, profile_yaml: str) -> str:
+    """Generate the CV with the LOCAL Claude Code subscription (claude CLI) — no
+    API token, no per-call billing. Runs headless from a temp dir so the project
+    CLAUDE.md isn't pulled in. Raises on failure (caller falls back to offline)."""
+    claude = shutil.which("claude")
+    if not claude:
+        raise RuntimeError("claude CLI not found on PATH")
+    proc = subprocess.run(
+        [claude, "-p", "--output-format", "text", "--append-system-prompt", SYSTEM_PROMPT],
+        input=_user_content(brief_md, base_resume_md, profile_yaml),
+        capture_output=True, text=True, cwd=tempfile.gettempdir(), timeout=300,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(f"claude CLI failed (exit {proc.returncode}): {proc.stderr[:400]}")
+    text = proc.stdout.strip()
+    if text.startswith("```"):  # strip an accidental code fence wrapper
+        text = re.sub(r"^```[a-zA-Z]*\n?|\n?```$", "", text).strip()
+    if not text:
+        raise RuntimeError("claude CLI returned empty output")
+    return text
 
 
 def generate_cv_via_api(brief_md: str, base_resume_md: str, profile_yaml: str) -> str:
@@ -56,18 +100,12 @@ def generate_cv_via_api(brief_md: str, base_resume_md: str, profile_yaml: str) -
     import anthropic
 
     client = anthropic.Anthropic()
-    user_content = (
-        "Generate the tailored resume for this job.\n\n"
-        f"## TAILORING BRIEF (job requirements + ATS keywords + gaps)\n\n{brief_md}\n\n"
-        f"## BASE RESUME\n\n{base_resume_md}\n\n"
-        f"## CANDIDATE PROFILE (source of truth — do not exceed it)\n\n{profile_yaml}"
-    )
     with client.messages.stream(
         model="claude-opus-4-8",
         max_tokens=16000,
         thinking={"type": "adaptive"},
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_content}],
+        messages=[{"role": "user", "content": _user_content(brief_md, base_resume_md, profile_yaml)}],
     ) as stream:
         message = stream.get_final_message()
 

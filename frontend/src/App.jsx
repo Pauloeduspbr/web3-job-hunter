@@ -32,7 +32,9 @@ export default function App() {
 
   useEffect(() => { refresh() }, [refresh])
 
-  const apiMode = status?.llm_mode === 'api'
+  const llmMode = status?.llm_mode
+  const llmLabel = { claude_code: 'Claude Code', api: 'Claude API', manual: 'Offline' }[llmMode] || '—'
+  const llmOk = llmMode === 'claude_code' || llmMode === 'api'
 
   return (
     <div className="app-shell">
@@ -49,8 +51,8 @@ export default function App() {
           <div className="appbar-pills">
             <span className="pill brand-pill"><Icon name="briefcase" size={13} /> <b>{status?.scored_jobs ?? 0}</b> vagas</span>
             <span className="pill"><Icon name="file" size={13} /> <b>{status?.resumes ?? 0}</b> CVs</span>
-            <span className={`pill ${apiMode ? 'api' : 'manual'}`}>
-              <span className="dot" /> {apiMode ? 'Claude API' : 'Claude Code'}
+            <span className={`pill ${llmOk ? 'api' : 'manual'}`}>
+              <span className="dot" /> {llmLabel}
             </span>
           </div>
         </div>
