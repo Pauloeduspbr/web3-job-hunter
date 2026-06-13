@@ -154,7 +154,8 @@ def enrich_jobs(job_ids: list[str]) -> list[dict]:
 
 
 def search_jobs(keywords: str = "data engineer", location: str = "United States",
-                max_jobs: int = 50, published_within: str = "week") -> list[dict]:
+                max_jobs: int = 50, published_within: str = "week",
+                include_description: bool = True) -> list[dict]:
     """Keyword search using the account's own actor (compute units only)."""
     print(f"Searching '{keywords}' in '{location}' via {ACTOR_JOB_SEARCH}")
     run = _client().actor(ACTOR_JOB_SEARCH).call(run_input={
@@ -162,6 +163,7 @@ def search_jobs(keywords: str = "data engineer", location: str = "United States"
         "location": location,
         "maxJobs": max_jobs,
         "publishedWithin": published_within,
+        "includeDescription": include_description,
     })
     items = _client().dataset(run["defaultDatasetId"]).list_items().items
     jobs = [_normalize(i) for i in items]
