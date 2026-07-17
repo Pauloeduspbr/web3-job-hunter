@@ -122,6 +122,7 @@ domains:
   - e-commerce (Natura)
   - telecom (Claro, Vivo, Nextel)
   - energy (Enel)
+  - food/meatpacking (JBS)
 
 achievements:
   - "99.9% uptime SLA for Banco do Brasil Big Data environment (millions of daily transactions)"
@@ -147,8 +148,11 @@ portfolio:
     proof: "12 blockchain analytics queries (DeFi, NFT, Solana, Ethereum, cross-chain)"
 
 certifications:
-  - Red Hat Certified System Administrator (RHCSA)
-  - Big Data Engineering — Garre Training (160h)
+  - "Big Data Engineering — Garre Training (160h, 2014)"
+  - "Oracle Business Intelligence Suite — Garre Training (80h, 2011)"
+  - "Red Hat Certified System Administrator (RHCSA) — RedHat (2008)"
+  - "Cisco Certified Network Associate (CCNA) — IBTA (2007)"
+  - "Microsoft Certified Systems Engineer — Impacta (2004)"
 
 # Ambas as formacoes em andamento sao REAIS (confirmado pelo Paulo em 2026-06-10)
 education:

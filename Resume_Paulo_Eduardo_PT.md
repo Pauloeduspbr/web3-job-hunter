@@ -186,8 +186,11 @@ Mão na massa em todo o stack moderno de dados — Python, SQL, PySpark/Spark, A
 
 ## CERTIFICAÇÕES
 
-- Red Hat Certified System Administrator (RHCSA)
-- Big Data Engineering — Garre Training (160h)
+- Big Data Engineering — Garre Training (160h) | 2014
+- Oracle Business Intelligence Suite — Garre Training (80h) | 2011
+- Red Hat Certified System Administrator (RHCSA) — RedHat | 2008
+- Cisco Certified Network Associate (CCNA) — IBTA | 2007
+- Microsoft Certified Systems Engineer — Impacta | 2004
 
 ---
 
